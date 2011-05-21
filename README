@@ -1,0 +1,4 @@
+This presentation is a S9 slideshow.
+
+command to compile:
+slideshow -t g5.txt version-control-with-git.markdown
