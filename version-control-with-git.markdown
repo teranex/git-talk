@@ -28,7 +28,8 @@ title: Version Control with Git
 * Add files to the index: `git add -A` or `git add .`
 * Commit files: `git commit`
 
+![git-01](img/git-01.png)
+
 # The Index (Staging Area)
 The index contains the changes to will be added to your next commit. Your commit will /not/ contain the changes in your working directory. Only the changes that were added to the index!
 
-![git-01](img/git-01.png)
