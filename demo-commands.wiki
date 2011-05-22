@@ -1,0 +1,16 @@
+= Drupal Camp 11 Talk Demos =
+
+== Demo 1 ==
+=== part 1 ===
+ls
+git init
+git add -A
+git commit
+git log
+
+=== part 2 ===
+create another file
+modify 2 files
+git status
+git diff
+git add say-hi.rb

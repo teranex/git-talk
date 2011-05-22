@@ -6,6 +6,9 @@ title: Version Control with Git
 * At Inuits - A Belgian Open Source Consultancy Company
 * http://budts.be
 * @teranex
+* will become a father in November
+
+![git-00](img/git-00.png)
 
 # Overview
 * Basic Git usage
@@ -33,3 +36,18 @@ title: Version Control with Git
 # The Index (Staging Area)
 The index contains the changes to will be added to your next commit. Your commit will /not/ contain the changes in your working directory. Only the changes that were added to the index!
 
+![git-02](img/git-02.png)
+
+# Let's make some more changes
+* modify some files: `vim hello.txt`
+* add it to the index: `git add hello.txt`
+
+# Undoing changes
+
+
+
+
+# Thanks!
+This presentation is licensed under the [Creative Commons Attribution-Non Commercial-Share Alike 3.0 license](http://creativecommons.org/licenses/by-nc-sa/3.0/us/)
+
+Some of these images where taken from the [Pro Git](http://progit.org/) book
