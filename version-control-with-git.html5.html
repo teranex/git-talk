@@ -459,6 +459,13 @@
         <div class="slide">
           <header><h1>Version Control with Git</h1></header>
           <section class="small">
+              
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Who am I?</h1></header>
+          <section class="small">
               <ul>
 <li>Jeroen Budts</li>
 <li>PHP &amp; Drupal Developer</li>
@@ -542,13 +549,21 @@ handle everything from small to very large projects with speed and efficiency."<
         </div>
                 
         <div class="slide">
-          <header><h1>Let's make some more changes</h1></header>
+          <header><h1>The Index (Staging Area)</h1></header>
           <section class="small">
-              <ul>
-<li>modify some files: <code>vim hello.txt</code></li>
-<li>add it to the index: <code>git add hello.txt</code></li>
-</ul>
+              <p>If you add a file, or a part of a file, to the index, a copy is made of that file. When you commit, it is that copy which ends up in the commit.</p>
 
+<p><strong>Important</strong>: if you make changes to the file after adding it to the index, those changes will
+not end up in your commit, unless you add the file again to the index!</p>
+
+<pre><code>`git diff`  
+# shows the diff of your working copy
+
+`git diff --cached`
+# show the diff of your index
+</code></pre>
+
+<p>Let's make some more changes and add some of these changes to the index.</p>
 
 
 

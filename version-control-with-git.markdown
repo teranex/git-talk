@@ -1,6 +1,8 @@
 title: Version Control with Git
 
 # Version Control with Git
+
+# Who am I?
 * Jeroen Budts
 * PHP & Drupal Developer
 * At Inuits - A Belgian Open Source Consultancy Company
@@ -38,9 +40,19 @@ The index contains the changes to will be added to your next commit. Your commit
 
 ![git-02](img/git-02.png)
 
-# Let's make some more changes
-* modify some files: `vim hello.txt`
-* add it to the index: `git add hello.txt`
+# The Index (Staging Area)
+If you add a file, or a part of a file, to the index, a copy is made of that file. When you commit, it is that copy which ends up in the commit.
+
+**Important**: if you make changes to the file after adding it to the index, those changes will 
+not end up in your commit, unless you add the file again to the index!
+
+    `git diff`  
+    # shows the diff of your working copy
+
+    `git diff --cached`
+    # show the diff of your index
+
+Let's make some more changes and add some of these changes to the index.
 
 # Undoing changes
 

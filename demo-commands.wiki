@@ -9,8 +9,50 @@ git commit
 git log
 
 === part 2 ===
-create another file
-modify 2 files
+# create another file
+echo 'hello' > anotherfile.txt
+# modify 2 files
+vim say-hi.rb
+vim hello.txt
 git status
 git diff
 git add say-hi.rb
+# show the different state
+git status
+# commit the new file but not the modified file
+git commit
+# show this
+git status
+
+# show how to avoid the index
+git commit -a
+
+# show the patch option (first modify the file on two blocks)
+vim hello.txt
+git add -p hello.txt
+? # show the options
+s # split the chunks
+y # add the chunk
+n # ignore the chunk
+git status
+git commit
+git status
+# show that line 2 has not been committed
+git diff
+
+# now show the diff between indexed and not
+git add
+git diff # shows nothing because added to index
+git diff --cached # shows the changes
+# modify the file again to have it twice in the status
+vim hello.txt
+git status # file is twice in status
+
+git commit
+git status # file is still modified
+
+
+# restore modified file to the commited one
+git checkout -- hello.txt
+git status
+vim hello.txt # show the file
