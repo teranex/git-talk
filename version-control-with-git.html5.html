@@ -573,7 +573,34 @@ not end up in your commit, unless you add the file again to the index!</p>
         <div class="slide">
           <header><h1>Undoing changes</h1></header>
           <section class="small">
-              
+              <h2>Checkout</h2>
+
+<p>Checkout a single file. Notice the dashes: <code>git checkout</code> is also used in other cases, this makes it clear to Git that you are pointing to a single file.</p>
+
+<pre><code>git checkout -- /path/to/file    # restore version from index
+git checkout HEAD /path/to/file  # restore to latest committed version
+</code></pre>
+
+<h2>Reset</h2>
+
+<p>Reset all the changes in your working copy</p>
+
+<pre><code>git reset [--hard]
+</code></pre>
+
+<h2>Revert</h2>
+
+<p>Write a reversed version of an existing commit. This is very useful if you have already pushed the commit</p>
+
+<pre><code>git revert [commit-sha]
+</code></pre>
+
+<h2>Rebase</h2>
+
+<p>We'll discuss this later</p>
+
+
+
           </section>
         </div>
                 

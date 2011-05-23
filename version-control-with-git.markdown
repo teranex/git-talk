@@ -55,8 +55,22 @@ not end up in your commit, unless you add the file again to the index!
 Let's make some more changes and add some of these changes to the index.
 
 # Undoing changes
+## Checkout
+Checkout a single file. Notice the dashes: `git checkout` is also used in other cases, this makes it clear to Git that you are pointing to a single file.
+    git checkout -- /path/to/file    # restore version from index
+    git checkout HEAD /path/to/file  # restore to latest committed version
 
 
+## Reset
+Reset all the changes in your working copy
+    git reset [--hard]
+
+## Revert
+Write a reversed version of an existing commit. This is very useful if you have already pushed the commit
+    git revert [commit-sha]
+
+## Rebase
+We'll discuss this later
 
 
 # Thanks!
