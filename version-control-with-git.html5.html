@@ -605,6 +605,129 @@ git checkout HEAD /path/to/file  # restore to latest committed version
         </div>
                 
         <div class="slide">
+          <header><h1>How Git stores your data</h1></header>
+          <section class="small">
+              <p>Knowing how Git stores all your data will give you a better understanding of the fundamentals and Git will become a lot more predictable</p>
+
+<p>The most important point to remember:</p>
+
+<p><strong> Basically a Git repository is a database of objects </strong></p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>How Git stores your data</h1></header>
+          <section class="small">
+              <p>The most important types of objects:</p>
+
+<ul>
+<li>blobs</li>
+<li>trees</li>
+<li>commits</li>
+</ul>
+
+
+<p>Let's study those in a bit more detail</p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Blobs</h1></header>
+          <section class="small">
+              <p>Git stores the <em>contents</em> of a file in a 'blob'.</p>
+
+<ul>
+<li>does not contain any meta data</li>
+<li>a hash is calculated as the blob name</li>
+<li>the hash will always be the same for the same contents</li>
+</ul>
+
+
+<p>some examples:</p>
+
+<pre><code>$ git hash-object hello.txt
+ce6c1fd146f65c899e6b10e46c89097c644e3229
+
+$ git hash-object say-hi.rb
+a8784b043f12b4b0c9114c55ebf33f5c9b44ce8f
+</code></pre>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Trees</h1></header>
+          <section class="small">
+              <p>A tree is a like a directory</p>
+
+<ul>
+<li>Can contain references to 0, 1 or more blobs</li>
+<li>Can contain references to 0, 1 or more other trees</li>
+<li>Contains the meta data about the files</li>
+<li>Itself also identified by a hash</li>
+</ul>
+
+
+<p><img src="img/git-03_2.png" alt="git-03" /></p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Commits</h1></header>
+          <section class="small">
+              <p>If you think about Git, think about commits!</p>
+
+<ul>
+<li>Contains a reference to one tree object</li>
+<li>Contains references to one or more other commits
+
+<ul>
+<li>one exception: the very first commit in the repo</li>
+</ul>
+</li>
+<li>A commit usually points to it's parent commit</li>
+<li>In case of a merge, it can point to two or more commits (one commit for each branch which you merged together)</li>
+</ul>
+
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Commits</h1></header>
+          <section class="small">
+              <p><img src="img/git-04.png" alt="git-04" /></p>
+
+<p>Did I mention that you should think in terms of commits, when working with Git?</p>
+
+<p>If you understand commits, you basically understand Git.</p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Suggested reading and resources</h1></header>
+          <section class="small">
+              
+          </section>
+        </div>
+                
+        <div class="slide">
           <header><h1>Thanks!</h1></header>
           <section class="small">
               <p>This presentation is licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative Commons Attribution-Non Commercial-Share Alike 3.0 license</a></p>

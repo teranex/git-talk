@@ -72,6 +72,66 @@ Write a reversed version of an existing commit. This is very useful if you have 
 ## Rebase
 We'll discuss this later
 
+# How Git stores your data
+Knowing how Git stores all your data will give you a better understanding of the fundamentals and Git will become a lot more predictable
+
+The most important point to remember:  
+   
+** Basically a Git repository is a database of objects **
+
+# How Git stores your data
+The most important types of objects:
+
+* blobs
+* trees
+* commits
+
+Let's study those in a bit more detail
+
+# Blobs
+
+Git stores the _contents_ of a file in a 'blob'.
+
+* does not contain any meta data
+* a hash is calculated as the blob name
+* the hash will always be the same for the same contents
+
+some examples:
+
+    $ git hash-object hello.txt
+    ce6c1fd146f65c899e6b10e46c89097c644e3229
+    
+    $ git hash-object say-hi.rb
+    a8784b043f12b4b0c9114c55ebf33f5c9b44ce8f
+
+# Trees
+A tree is a like a directory
+
+* Can contain references to 0, 1 or more blobs
+* Can contain references to 0, 1 or more other trees
+* Contains the meta data about the files
+* Itself also identified by a hash
+
+![git-03](img/git-03_2.png)
+
+# Commits
+If you think about Git, think about commits!
+
+* Contains a reference to one tree object
+* Contains references to one or more other commits
+   * one exception: the very first commit in the repo
+* A commit usually points to it's parent commit
+* In case of a merge, it can point to two or more commits (one commit for each branch which you merged together)
+
+# Commits
+
+![git-04](img/git-04.png)
+
+Did I mention that you should think in terms of commits, when working with Git?  
+
+If you understand commits, you basically understand Git.
+
+# Suggested reading and resources
 
 # Thanks!
 This presentation is licensed under the [Creative Commons Attribution-Non Commercial-Share Alike 3.0 license](http://creativecommons.org/licenses/by-nc-sa/3.0/us/)
