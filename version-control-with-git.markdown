@@ -5,17 +5,18 @@ title: Version Control with Git
 # Who am I?
 * Jeroen Budts
 * PHP & Drupal Developer
-* At Inuits - A Belgian Open Source Consultancy Company
+* At [Inuits](http://inuits.eu) - An Open Source Consultancy Company
 * http://budts.be
 * @teranex
 * will become a father in November
 
-![git-00](img/git-00.png)
+![git-00](img/git-00_2.png)
 
 # Overview
 * Basic Git usage
 * How Git stores it's stuff
 * More advanced Git usage
+  (branching, merging, rebasing, remotes, ...)
 * Some cool Git tools
 * Git and Drupal
 
@@ -153,6 +154,7 @@ And that brings us to...
 Branches in Git are basically just references to other commits
 
 * very easy to create
+* once you get the hang of it, you will probably create branches for almost every feature you want to implement
 * a branch has a name
 * this name is also the reference to the most recent commit for that branch
 * a commit can be shared by branches
@@ -171,6 +173,10 @@ The two previous commands can be combined:
 
 This will create a branch and immediately check it out.
 
+Once you have merged your work on a specific feature back into your master branch you can delete your feature branch:
+
+    git branch -d mywork
+
 
 # Branches
 
@@ -182,7 +188,11 @@ This will create a branch and immediately check it out.
 
 # Merging
 
-When you have been working on a
+When you have been working on a (feature) branch for a while you will probably want to merge it back into your master or develop branch (whatever name you use for it)
+
+# Merging - fast forward
+
+# Merging - merge commits
 
 # Rebasing
 

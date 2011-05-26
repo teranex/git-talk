@@ -469,14 +469,14 @@
               <ul>
 <li>Jeroen Budts</li>
 <li>PHP &amp; Drupal Developer</li>
-<li>At Inuits - A Belgian Open Source Consultancy Company</li>
+<li>At <a href="http://inuits.eu">Inuits</a> - An Open Source Consultancy Company</li>
 <li>http://budts.be</li>
 <li>@teranex</li>
 <li>will become a father in November</li>
 </ul>
 
 
-<p><img src="img/git-00.png" alt="git-00" /></p>
+<p><img src="img/git-00_2.png" alt="git-00" /></p>
 
 
 
@@ -489,7 +489,8 @@
               <ul>
 <li>Basic Git usage</li>
 <li>How Git stores it's stuff</li>
-<li>More advanced Git usage</li>
+<li>More advanced Git usage
+(branching, merging, rebasing, remotes, ...)</li>
 <li>Some cool Git tools</li>
 <li>Git and Drupal</li>
 </ul>
@@ -758,6 +759,7 @@ a8784b043f12b4b0c9114c55ebf33f5c9b44ce8f
 
 <ul>
 <li>very easy to create</li>
+<li>once you get the hang of it, you will probably create branches for almost every feature you want to implement</li>
 <li>a branch has a name</li>
 <li>this name is also the reference to the most recent commit for that branch</li>
 <li>a commit can be shared by branches</li>
@@ -787,6 +789,11 @@ git checkout mywork
 
 <p>This will create a branch and immediately check it out.</p>
 
+<p>Once you have merged your work on a specific feature back into your master branch you can delete your feature branch:</p>
+
+<pre><code>git branch -d mywork
+</code></pre>
+
 
 
           </section>
@@ -812,10 +819,24 @@ git checkout mywork
         <div class="slide">
           <header><h1>Merging</h1></header>
           <section class="small">
-              <p>When you have been working on a</p>
+              <p>When you have been working on a (feature) branch for a while you will probably want to merge it back into your master or develop branch (whatever name you use for it)</p>
 
 
 
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Merging - fast forward</h1></header>
+          <section class="small">
+              
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Merging - merge commits</h1></header>
+          <section class="small">
+              
           </section>
         </div>
                 
