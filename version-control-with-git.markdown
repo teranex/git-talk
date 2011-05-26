@@ -190,9 +190,17 @@ Once you have merged your work on a specific feature back into your master branc
 
 When you have been working on a (feature) branch for a while you will probably want to merge it back into your master or develop branch (whatever name you use for it)
 
-# Merging - fast forward
+    # checkout the target branch
+    git checkout master
+    # merge our mywork branch into master
+    git merge mywork
 
-# Merging - merge commits
+Now your repository looks like this: (Notice that commit C7 has two parents)
+![git-06](img/git-06.png)
+
+# Merging
+fast forward
+merge commits
 
 # Rebasing
 

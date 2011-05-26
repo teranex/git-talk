@@ -821,22 +821,28 @@ git checkout mywork
           <section class="small">
               <p>When you have been working on a (feature) branch for a while you will probably want to merge it back into your master or develop branch (whatever name you use for it)</p>
 
+<pre><code># checkout the target branch
+git checkout master
+# merge our mywork branch into master
+git merge mywork
+</code></pre>
+
+<p>Now your repository looks like this: (Notice that commit C7 has two parents)
+<img src="img/git-06.png" alt="git-06" /></p>
+
 
 
           </section>
         </div>
                 
         <div class="slide">
-          <header><h1>Merging - fast forward</h1></header>
+          <header><h1>Merging</h1></header>
           <section class="small">
-              
-          </section>
-        </div>
-                
-        <div class="slide">
-          <header><h1>Merging - merge commits</h1></header>
-          <section class="small">
-              
+              <p>fast forward
+merge commits</p>
+
+
+
           </section>
         </div>
                 
