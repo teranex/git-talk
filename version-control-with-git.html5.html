@@ -721,6 +721,126 @@ a8784b043f12b4b0c9114c55ebf33f5c9b44ce8f
         </div>
                 
         <div class="slide">
+          <header><h1>Git References or "refs"</h1></header>
+          <section class="small">
+              <p>Because a commit hash is very difficult to remember and not really useful to work with, Git uses references to point to specific commits.</p>
+
+<h2>HEAD</h2>
+
+<p>One such reference is <strong>HEAD</strong></p>
+
+<ul>
+<li>It points to the commit which is currently checked out into your working directory</li>
+</ul>
+
+
+<h2>master</h2>
+
+<p>Another important reference is <strong>master</strong></p>
+
+<ul>
+<li>master is the 'default' branch in Git</li>
+<li>when working on the master branch, the master reference and the HEAD reference point to the same commit</li>
+</ul>
+
+
+<p>And that brings us to...</p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Branches</h1></header>
+          <section class="small">
+              <p>Branches in Git are basically just references to other commits</p>
+
+<ul>
+<li>very easy to create</li>
+<li>a branch has a name</li>
+<li>this name is also the reference to the most recent commit for that branch</li>
+<li>a commit can be shared by branches</li>
+<li>The point where a branch is split of from another branch, can be found by following the parents of all the commits until you find a common commit</li>
+</ul>
+
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Branches</h1></header>
+          <section class="small">
+              <p>Creating a branch and switching to it is easy:</p>
+
+<pre><code>git branch mywork
+
+git checkout mywork
+</code></pre>
+
+<p>The two previous commands can be combined:</p>
+
+<pre><code>git checkout -b mywork
+</code></pre>
+
+<p>This will create a branch and immediately check it out.</p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Branches</h1></header>
+          <section class="small">
+              <ul>
+<li>We are working on a branch named 'origin'</li>
+<li>At commit C2 we decide to split off a new branch named 'mywork'.</li>
+<li>Both branches originate from commit C2; commit C3 and C5 have the same parent</li>
+</ul>
+
+
+<p><img src="img/git-05.png" alt="git-05" /></p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Merging</h1></header>
+          <section class="small">
+              <p>When you have been working on a</p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Rebasing</h1></header>
+          <section class="small">
+              
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Working with remotes</h1></header>
+          <section class="small">
+              
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>History</h1></header>
+          <section class="small">
+              
+          </section>
+        </div>
+                
+        <div class="slide">
           <header><h1>Suggested reading and resources</h1></header>
           <section class="small">
               
@@ -732,7 +852,13 @@ a8784b043f12b4b0c9114c55ebf33f5c9b44ce8f
           <section class="small">
               <p>This presentation is licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative Commons Attribution-Non Commercial-Share Alike 3.0 license</a></p>
 
-<p>Some of these images where taken from the <a href="http://progit.org/">Pro Git</a> book</p>
+<p>Sources of images and inspiration:</p>
+
+<ul>
+<li>Pro Git: <a href="http://progit.org/">http://progit.org/</a></li>
+<li>The Git Community Book: <a href="http://book.git-scm.com/">http://book.git-scm.com/</a></li>
+</ul>
+
           </section>
         </div>
         

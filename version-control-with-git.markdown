@@ -131,9 +131,72 @@ Did I mention that you should think in terms of commits, when working with Git?
 
 If you understand commits, you basically understand Git.
 
+# Git References or "refs"
+
+Because a commit hash is very difficult to remember and not really useful to work with, Git uses references to point to specific commits.
+
+## HEAD
+One such reference is **HEAD**
+
+* It points to the commit which is currently checked out into your working directory
+
+## master
+Another important reference is **master**
+
+* master is the 'default' branch in Git
+* when working on the master branch, the master reference and the HEAD reference point to the same commit
+
+And that brings us to...
+
+# Branches
+
+Branches in Git are basically just references to other commits
+
+* very easy to create
+* a branch has a name
+* this name is also the reference to the most recent commit for that branch
+* a commit can be shared by branches
+* The point where a branch is split of from another branch, can be found by following the parents of all the commits until you find a common commit
+
+# Branches
+Creating a branch and switching to it is easy:
+
+    git branch mywork
+    
+    git checkout mywork
+
+The two previous commands can be combined:
+
+    git checkout -b mywork
+
+This will create a branch and immediately check it out.
+
+
+# Branches
+
+* We are working on a branch named 'origin'
+* At commit C2 we decide to split off a new branch named 'mywork'.
+* Both branches originate from commit C2; commit C3 and C5 have the same parent
+
+![git-05](img/git-05.png)
+
+# Merging
+
+When you have been working on a
+
+# Rebasing
+
+# Working with remotes
+
+# History
+
+
 # Suggested reading and resources
 
 # Thanks!
 This presentation is licensed under the [Creative Commons Attribution-Non Commercial-Share Alike 3.0 license](http://creativecommons.org/licenses/by-nc-sa/3.0/us/)
 
-Some of these images where taken from the [Pro Git](http://progit.org/) book
+Sources of images and inspiration:
+
+* Pro Git: [http://progit.org/](http://progit.org/)
+* The Git Community Book: [http://book.git-scm.com/](http://book.git-scm.com/)
