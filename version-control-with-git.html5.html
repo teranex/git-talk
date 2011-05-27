@@ -652,6 +652,7 @@ git checkout HEAD /path/to/file  # restore to latest committed version
 
 <ul>
 <li>does not contain any meta data</li>
+<li>a blob never changes</li>
 <li>a hash is calculated as the blob name</li>
 <li>the hash will always be the same for the same contents</li>
 </ul>
@@ -880,6 +881,7 @@ git merge mywork
 <li>In fact nothing much happens</li>
 <li>Except: The reference for the target branch is simply changed to point the same commit as the source branch</li>
 <li>This is an ideal situation and can never go wrong</li>
+<li>Obviously you are not always this lucky (→ rebasing)</li>
 </ul>
 
 
@@ -904,7 +906,89 @@ git merge mywork
         <div class="slide">
           <header><h1>Rebasing</h1></header>
           <section class="small">
-              
+              <p>Instead of merging (with merge commits) you can also rebase (so you can then fast forward)</p>
+
+<p>Some people will tell you that this is very harmful, it can break your repository and destroy the universe.<br/>
+This is <strong>NOT TRUE</strong>. (At least if you know what you are doing)</p>
+
+<h2>So what is 'rebasing'?</h2>
+
+<p>By rebasing your commits you can actually rewrite your history:</p>
+
+<ul>
+<li>Edit a commit message</li>
+<li>Add missing files to a commit</li>
+<li>Reorder your commits</li>
+<li>Modify the parent of a commit</li>
+<li>Merge a few commits together into a single commit</li>
+<li>Delete commits from the history</li>
+<li>...</li>
+<li>And break your repository if you want :)</li>
+</ul>
+
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Rebasing</h1></header>
+          <section class="small">
+              <h2>How not to break your repo?</h2>
+
+<p>Do not rebase commits which have already been pushed to other people</p>
+
+<p>Do not rebase commits which have already been pushed to other people</p>
+
+<p>Do not rebase commits which have already been pushed to other people</p>
+
+<p>(<em>I'l explain how to push later</em>)</p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Rebasing</h1></header>
+          <section class="small">
+              <h2>Amending changes</h2>
+
+<ul>
+<li>The easiest and 'safest' kind of rebase</li>
+<li>Only possible for the most recent commit</li>
+<li>Let's you missing files and modify the commit message</li>
+</ul>
+
+
+<p>After modifying your index again:</p>
+
+<pre><code>git commit --amend
+</code></pre>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Rebasing</h1></header>
+          <section class="small">
+              <h2>... on another branch</h2>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Rebasing</h1></header>
+          <section class="small">
+              <h2>Interactively</h2>
+
+
+
           </section>
         </div>
                 

@@ -96,6 +96,7 @@ Let's study those in a bit more detail
 Git stores the _contents_ of a file in a 'blob'.
 
 * does not contain any meta data
+* a blob never changes
 * a hash is calculated as the blob name
 * the hash will always be the same for the same contents
 
@@ -222,6 +223,7 @@ When merging two or more branches there are two possibilities:
 * In fact nothing much happens
 * Except: The reference for the target branch is simply changed to point the same commit as the source branch
 * This is an ideal situation and can never go wrong
+* Obviously you are not always this lucky (→ rebasing)
 
 # Merging 
 ## Fast Forward
@@ -229,6 +231,50 @@ When merging two or more branches there are two possibilities:
 ![git-07-after](img/git-07-after.png) The origin branch is simply fast-forwarded
 
 # Rebasing
+Instead of merging (with merge commits) you can also rebase (so you can then fast forward)
+
+Some people will tell you that this is very harmful, it can break your repository and destroy the universe.  
+This is **NOT TRUE**. (At least if you know what you are doing)
+
+## So what is 'rebasing'?
+By rebasing your commits you can actually rewrite your history:
+
+* Edit a commit message
+* Add missing files to a commit
+* Reorder your commits
+* Modify the parent of a commit
+* Merge a few commits together into a single commit
+* Delete commits from the history
+* ...
+* And break your repository if you want :)
+
+# Rebasing
+## How not to break your repo?
+
+Do not rebase commits which have already been pushed to other people  
+
+Do not rebase commits which have already been pushed to other people  
+
+Do not rebase commits which have already been pushed to other people  
+
+(_I'l explain how to push later_)
+
+# Rebasing
+## Amending changes
+
+* The easiest and 'safest' kind of rebase 
+* Only possible for the most recent commit
+* Let's you missing files and modify the commit message  
+
+After modifying your index again:
+
+    git commit --amend
+
+# Rebasing
+## ... on another branch
+
+# Rebasing
+## Interactively
 
 # Working with remotes
 
