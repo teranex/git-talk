@@ -945,6 +945,8 @@ This is <strong>NOT TRUE</strong>. (At least if you know what you are doing)</p>
 
 <p>(<em>I'l explain how to push later</em>)</p>
 
+<p>If you do rebase a commit which was already pushed, Git will refuse the new commit, unless you use the <code>--force</code> option.</p>
+
 
 
           </section>
@@ -958,7 +960,7 @@ This is <strong>NOT TRUE</strong>. (At least if you know what you are doing)</p>
 <ul>
 <li>The easiest and 'safest' kind of rebase</li>
 <li>Only possible for the most recent commit</li>
-<li>Let's you missing files and modify the commit message</li>
+<li>Let's you add missing files and modify the commit message</li>
 </ul>
 
 
@@ -976,6 +978,79 @@ This is <strong>NOT TRUE</strong>. (At least if you know what you are doing)</p>
           <header><h1>Rebasing</h1></header>
           <section class="small">
               <h2>... on another branch</h2>
+
+<p>This is an alternative approach to merging, with a merge commit.</p>
+
+<p>Let's reuse the example:</p>
+
+<p><img src="img/git-05.png" alt="git-05" /></p>
+
+<p>Now you  want to merge 'mywork' into 'origin' without creating a merge commit</p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Rebasing</h1></header>
+          <section class="small">
+              <h2>... on another branch</h2>
+
+<p>What we did before:</p>
+
+<pre><code>git checkout origin
+git merge mywork
+</code></pre>
+
+<p>What we will do know</p>
+
+<pre><code># on the mywork branch
+git rebase origin
+# fix any merge conflicts
+git checkout origin
+git merge mywork
+</code></pre>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Rebasing</h1></header>
+          <section class="small">
+              <h2>... on another branch</h2>
+
+<pre><code># on the mywork branch
+git rebase origin
+</code></pre>
+
+<p><img src="img/git-08.png" alt="git-08" /></p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Rebasing</h1></header>
+          <section class="small">
+              <h2>... on another branch</h2>
+
+<p><img src="img/git-09.png" alt="git-09" /></p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Rebasing</h1></header>
+          <section class="small">
+              <h2>... on another branch</h2>
+
+<p><img src="img/git-10.png" alt="git-10" /></p>
 
 
 

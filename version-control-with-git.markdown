@@ -259,12 +259,14 @@ Do not rebase commits which have already been pushed to other people
 
 (_I'l explain how to push later_)
 
+If you do rebase a commit which was already pushed, Git will refuse the new commit, unless you use the `--force` option.
+
 # Rebasing
 ## Amending changes
 
 * The easiest and 'safest' kind of rebase 
 * Only possible for the most recent commit
-* Let's you missing files and modify the commit message  
+* Let's you add missing files and modify the commit message  
 
 After modifying your index again:
 
@@ -272,6 +274,46 @@ After modifying your index again:
 
 # Rebasing
 ## ... on another branch
+This is an alternative approach to merging, with a merge commit.
+
+Let's reuse the example:
+
+![git-05](img/git-05.png)
+
+Now you  want to merge 'mywork' into 'origin' without creating a merge commit
+
+# Rebasing
+## ... on another branch
+What we did before:
+
+    git checkout origin
+    git merge mywork
+
+What we will do know
+
+    # on the mywork branch
+    git rebase origin
+    # fix any merge conflicts
+    git checkout origin
+    git merge mywork
+
+# Rebasing
+## ... on another branch
+
+    # on the mywork branch
+    git rebase origin
+
+![git-08](img/git-08.png)
+
+# Rebasing
+## ... on another branch
+
+![git-09](img/git-09.png)
+
+# Rebasing
+## ... on another branch
+
+![git-10](img/git-10.png)
 
 # Rebasing
 ## Interactively
