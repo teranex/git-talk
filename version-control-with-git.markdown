@@ -259,7 +259,11 @@ Do not rebase commits which have already been pushed to other people
 
 (_I'l explain how to push later_)
 
+Each commit which is rebased will get a new, different, hash. People (and Git) which pull this new hash will get confused.
+
 If you do rebase a commit which was already pushed, Git will refuse the new commit, unless you use the `--force` option.
+
+
 
 # Rebasing
 ## Amending changes
@@ -317,6 +321,25 @@ What we will do know
 
 # Rebasing
 ## Interactively
+
+With interactive rebasing you can really rewrite history the way you want it to be. ...And break your repository.
+
+Rebase the commits since <commit-hash>
+
+    git rebase --interactive <commit-hash>
+
+Suppose we have the following commits
+
+![git-11](img/git-11.png)
+
+# Rebasing
+## Interactively
+
+To rebase the most recent 3 commits:
+
+    git rebase --interactive 4efd195
+
+![git-12](img/git-12.png)
 
 # Working with remotes
 
