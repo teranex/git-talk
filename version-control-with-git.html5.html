@@ -538,6 +538,13 @@ handle everything from small to very large projects with speed and efficiency."<
         </div>
                 
         <div class="slide">
+          <header><h1>History</h1></header>
+          <section class="small">
+              
+          </section>
+        </div>
+                
+        <div class="slide">
           <header><h1>The Index (Staging Area)</h1></header>
           <section class="small">
               <p>The index contains the changes to will be added to your next commit. Your commit will /not/ contain the changes in your working directory. Only the changes that were added to the index!</p>
@@ -838,8 +845,56 @@ git merge mywork
         <div class="slide">
           <header><h1>Merging</h1></header>
           <section class="small">
-              <p>fast forward
-merge commits</p>
+              <p>When merging two or more branches there are two possibilities:</p>
+
+<ul>
+<li>Merge commit</li>
+<li>Fast Forward</li>
+</ul>
+
+
+<h2>Merge commit</h2>
+
+<ul>
+<li>When both branches have new commits a merge commit is created.</li>
+<li><p>Git automatically proposes a commit message:</p>
+
+<p>  <code>Merge branch 'mywork' into master</code></p></li>
+<li>The commit has two or more parents</li>
+</ul>
+
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Merging</h1></header>
+          <section class="small">
+              <h2>Fast Forward</h2>
+
+<ul>
+<li>When the target branch does not have new commits</li>
+<li>No merge commit is created</li>
+<li>In fact nothing much happens</li>
+<li>Except: The reference for the target branch is simply changed to point the same commit as the source branch</li>
+<li>This is an ideal situation and can never go wrong</li>
+</ul>
+
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Merging</h1></header>
+          <section class="small">
+              <h2>Fast Forward</h2>
+
+<p><img src="img/git-07-before.png" alt="git-07-before" /> Merge the 'mywork' branch into origin
+<img src="img/git-07-after.png" alt="git-07-after" /> The origin branch is simply fast-forwarded</p>
 
 
 
@@ -855,13 +910,6 @@ merge commits</p>
                 
         <div class="slide">
           <header><h1>Working with remotes</h1></header>
-          <section class="small">
-              
-          </section>
-        </div>
-                
-        <div class="slide">
-          <header><h1>History</h1></header>
           <section class="small">
               
           </section>

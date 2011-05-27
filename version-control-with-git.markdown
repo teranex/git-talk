@@ -36,6 +36,8 @@ title: Version Control with Git
 
 ![git-01](img/git-01.png)
 
+# History
+
 # The Index (Staging Area)
 The index contains the changes to will be added to your next commit. Your commit will /not/ contain the changes in your working directory. Only the changes that were added to the index!
 
@@ -199,14 +201,37 @@ Now your repository looks like this: (Notice that commit C7 has two parents)
 ![git-06](img/git-06.png)
 
 # Merging
-fast forward
-merge commits
+
+When merging two or more branches there are two possibilities:
+
+* Merge commit
+* Fast Forward  
+
+
+## Merge commit
+* When both branches have new commits a merge commit is created.
+* Git automatically proposes a commit message:  
+
+    `Merge branch 'mywork' into master`
+* The commit has two or more parents
+
+# Merging
+##Fast Forward
+* When the target branch does not have new commits
+* No merge commit is created
+* In fact nothing much happens
+* Except: The reference for the target branch is simply changed to point the same commit as the source branch
+* This is an ideal situation and can never go wrong
+
+# Merging 
+## Fast Forward
+![git-07-before](img/git-07-before.png) Merge the 'mywork' branch into origin
+![git-07-after](img/git-07-after.png) The origin branch is simply fast-forwarded
 
 # Rebasing
 
 # Working with remotes
 
-# History
 
 
 # Suggested reading and resources
