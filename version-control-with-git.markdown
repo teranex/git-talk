@@ -1,12 +1,14 @@
 title: Version Control with Git
 
-# Version Control with Git
+%# Version Control with Git
+!SLIDE
+![main](img/main-slide.png)
 
 # Who am I?
 * Jeroen Budts
 * PHP & Drupal Developer
 * At [Inuits](http://inuits.eu) - An Open Source Consultancy Company
-* http://budts.be
+* [http://budts.be](http://budts.be)
 * @teranex
 * will become a father in November
 
@@ -361,7 +363,33 @@ To rebase the most recent 3 commits:
 
 # Working with remotes
 
+To share your work with other people you have a few options. One of these is to work with remotes
 
+Easiest method to set this up is by cloning an existing repository instead of initializing your repo.
+
+    git clone http://git.drupal.org/project/drupal.git
+
+![git-14](img/git-14.png)
+
+This will set up everything for you
+
+# Working with remotes
+## Manually adding remotes
+Sometimes you will want to add a remote
+
+* Because you had already created the repository
+* Or maybe because you want to add one or more additional remotes
+
+This is done with the `git remote` command
+
+    git remote add github git@github.com:teranex/git-talk.git
+
+This will add my Github repository for this presentation as a remote with the name _github_
+
+Push your master branch to this new remote:
+
+# Working with remotes
+## Pulling and pushing
 
 # Suggested reading and resources
 

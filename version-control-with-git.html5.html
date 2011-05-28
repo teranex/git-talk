@@ -457,9 +457,15 @@
         
                 
         <div class="slide">
-          <header><h1>Version Control with Git</h1></header>
+          <header></header>
           <section class="small">
-              
+              <!-- _S9SLIDE_  -->
+
+
+<p><img src="img/main-slide.png" alt="main" /></p>
+
+
+
           </section>
         </div>
                 
@@ -470,7 +476,7 @@
 <li>Jeroen Budts</li>
 <li>PHP &amp; Drupal Developer</li>
 <li>At <a href="http://inuits.eu">Inuits</a> - An Open Source Consultancy Company</li>
-<li>http://budts.be</li>
+<li><a href="http://budts.be">http://budts.be</a></li>
 <li>@teranex</li>
 <li>will become a father in November</li>
 </ul>
@@ -1131,7 +1137,56 @@ git rebase origin
         <div class="slide">
           <header><h1>Working with remotes</h1></header>
           <section class="small">
-              
+              <p>To share your work with other people you have a few options. One of these is to work with remotes</p>
+
+<p>Easiest method to set this up is by cloning an existing repository instead of initializing your repo.</p>
+
+<pre><code>git clone http://git.drupal.org/project/drupal.git
+</code></pre>
+
+<p><img src="img/git-14.png" alt="git-14" /></p>
+
+<p>This will set up everything for you</p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Working with remotes</h1></header>
+          <section class="small">
+              <h2>Manually adding remotes</h2>
+
+<p>Sometimes you will want to add a remote</p>
+
+<ul>
+<li>Because you had already created the repository</li>
+<li>Or maybe because you want to add one or more additional remotes</li>
+</ul>
+
+
+<p>This is done with the <code>git remote</code> command</p>
+
+<pre><code>git remote add github git@github.com:teranex/git-talk.git
+</code></pre>
+
+<p>This will add my Github repository for this presentation as a remote with the name <em>github</em></p>
+
+<p>Push your master branch to this new remote:</p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Working with remotes</h1></header>
+          <section class="small">
+              <h2>Pulling and pushing</h2>
+
+
+
           </section>
         </div>
                 
