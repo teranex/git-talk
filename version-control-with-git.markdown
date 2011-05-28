@@ -460,6 +460,35 @@ or, if you want to do it manually:
     git fetch github
     git rebase github/master
 
+# Some really cool tools
+
+* The git log alias I showed earlier is really useful
+* Gitk: Part of the official Git distro, but it's UGLY UGLY UGLY
+* Giggle & GitX: better looking, for Gnome & Mac
+* tig: commandline. Also very useful to stage/unstage files
+* Fugitive and gitv plugins for Vim
+* meld: mergetool for linux, has support for git
+
+![git-17](img/git-17.png)
+
+# Git and Drupal
+
+For the Drupal infrastructure (Update status, testing bot, etc) it is important to following the following conventions:
+
+## Branch names
+* 7.x
+* 7.x-1.x
+* 7.x-2.x
+
+development releases will be created twice a day (7.x-1.x-dev)
+
+## Tags
+* 7.x-1.3-beta6: beta 6 release
+* 7.x-3.1: final release
+* valid: unstable, alpha, beta, rc
+
+You can create other branches for features etc
+
 # Suggested reading and resources
 
 # Thanks!
