@@ -487,12 +487,22 @@ development releases will be created twice a day (7.x-1.x-dev)
 * 7.x-3.1: final release
 * valid: unstable, alpha, beta, rc
 
-You can create other branches for features etc
+You can create other branches for features etc  
+
+If you don't have commit access on drupal.org, you can contribute by creating git patches (with `git diff` or `git format-patch`)
 
 # Suggested reading and resources
 
+* Drupal Git documentation: [http://drupal.org/documentation/git](http://drupal.org/documentation/git)
+* the git man-pages
+* Pro Git: [http://progit.org/](http://progit.org/)
+* The Git Community Book: [http://book.git-scm.com/](http://book.git-scm.com/)
+* StackOverflow: [http://stackoverflow.com](http://stackoverflow.com) has a lot of valuable questions and answers related to Git.
+
 # Thanks!
 This presentation is licensed under the [Creative Commons Attribution-Non Commercial-Share Alike 3.0 license](http://creativecommons.org/licenses/by-nc-sa/3.0/us/)
+
+This presentation is available on github: [https://github.com/teranex/git-talk](https://github.com/teranex/git-talk)
 
 Sources of images and inspiration:
 
