@@ -497,7 +497,7 @@ If you don't have commit access on drupal.org, you can contribute by creating gi
 * the git man-pages
 * Pro Git: [http://progit.org/](http://progit.org/)
 * The Git Community Book: [http://book.git-scm.com/](http://book.git-scm.com/)
-* StackOverflow: [http://stackoverflow.com](http://stackoverflow.com) has a lot of valuable questions and answers related to Git.
+* StackOverflow: [http://stackoverflow.com](http://stackoverflow.com/questions/tagged/git) has a lot of valuable questions and answers related to Git.
 
 # Thanks!
 This presentation is licensed under the [Creative Commons Attribution-Non Commercial-Share Alike 3.0 license](http://creativecommons.org/licenses/by-nc-sa/3.0/us/)
