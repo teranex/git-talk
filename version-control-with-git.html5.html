@@ -529,14 +529,25 @@ handle everything from small to very large projects with speed and efficiency."<
         <div class="slide">
           <header><h1>Basic Git Usage</h1></header>
           <section class="small">
-              <ul>
-<li>Initialize a repo: <code>git init</code></li>
-<li>Add files to the index: <code>git add -A</code> or <code>git add .</code></li>
-<li>Commit files: <code>git commit</code></li>
-</ul>
+              <p>First initialize the git repository:</p>
 
+<pre><code>git init
+</code></pre>
 
-<p><img src="img/git-01.png" alt="git-01" /></p>
+<p>Then add files</p>
+
+<pre><code>git add -A
+# or
+git add .
+# or
+git add myfile.txt
+git add myotherfile.rb
+</code></pre>
+
+<p>And commit the files</p>
+
+<pre><code>git commit
+</code></pre>
 
 
 
@@ -570,7 +581,30 @@ not end up in your commit, unless you add the file again to the index!</p>
 # show the diff of your index
 </code></pre>
 
-<p>Let's make some more changes and add some of these changes to the index.</p>
+<p>If you modify files, you need to '<em>stage</em>' them again, by running <code>git add</code>.</p>
+
+<p>If you only modified files (not added new ones) you can skip staging with:</p>
+
+<pre><code>git commit -a
+</code></pre>
+
+<p>You can also add only parts of a modified file:</p>
+
+<pre><code>git add -p myfile.txt
+</code></pre>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>The Index (Staging Area)</h1></header>
+          <section class="small">
+              <pre><code>git status # show the status of your repo
+</code></pre>
+
+<p><img src="img/git-18.png" alt="git-18" /></p>
 
 
 

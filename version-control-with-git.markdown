@@ -32,11 +32,19 @@ title: Version Control with Git
 * Created by Linus Torvalds (Linux)
 
 # Basic Git Usage
-* Initialize a repo: `git init`
-* Add files to the index: `git add -A` or `git add .`
-* Commit files: `git commit`
+First initialize the git repository:
+    git init
 
-![git-01](img/git-01.png)
+Then add files
+    git add -A
+    # or
+    git add .
+    # or
+    git add myfile.txt
+    git add myotherfile.rb
+
+And commit the files
+    git commit
 
 # The Index (Staging Area)
 The index contains the changes to will be added to your next commit. Your commit will /not/ contain the changes in your working directory. Only the changes that were added to the index!
@@ -55,7 +63,18 @@ not end up in your commit, unless you add the file again to the index!
     `git diff --cached`
     # show the diff of your index
 
-Let's make some more changes and add some of these changes to the index.
+If you modify files, you need to '_stage_' them again, by running `git add`.  
+
+If you only modified files (not added new ones) you can skip staging with:
+    git commit -a
+
+You can also add only parts of a modified file:
+    git add -p myfile.txt
+
+# The Index (Staging Area)
+    git status # show the status of your repo
+
+![git-18](img/git-18.png)
 
 # Viewing the history
     git log
