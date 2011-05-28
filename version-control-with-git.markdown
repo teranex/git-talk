@@ -36,8 +36,6 @@ title: Version Control with Git
 
 ![git-01](img/git-01.png)
 
-# History
-
 # The Index (Staging Area)
 The index contains the changes to will be added to your next commit. Your commit will /not/ contain the changes in your working directory. Only the changes that were added to the index!
 
@@ -56,6 +54,27 @@ not end up in your commit, unless you add the file again to the index!
     # show the diff of your index
 
 Let's make some more changes and add some of these changes to the index.
+
+# Viewing the history
+    git log
+
+![git-13](img/git-13.png)
+
+# Viewing the history
+`git log` has many options. The following:
+
+    git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset \
+    %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+Will give you this, which gives **a lot** more information
+
+![git-11](img/git-11.png)
+
+Tip: add this in your global gitconfig as an alias: ~/.gitconfig
+
+    [alias]
+        l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s 
+        %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative    
 
 # Undoing changes
 ## Checkout
@@ -262,7 +281,6 @@ Do not rebase commits which have already been pushed to other people
 Each commit which is rebased will get a new, different, hash. People (and Git) which pull this new hash will get confused.
 
 If you do rebase a commit which was already pushed, Git will refuse the new commit, unless you use the `--force` option.
-
 
 
 # Rebasing

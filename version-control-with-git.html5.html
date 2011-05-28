@@ -538,13 +538,6 @@ handle everything from small to very large projects with speed and efficiency."<
         </div>
                 
         <div class="slide">
-          <header><h1>History</h1></header>
-          <section class="small">
-              
-          </section>
-        </div>
-                
-        <div class="slide">
           <header><h1>The Index (Staging Area)</h1></header>
           <section class="small">
               <p>The index contains the changes to will be added to your next commit. Your commit will /not/ contain the changes in your working directory. Only the changes that were added to the index!</p>
@@ -572,6 +565,44 @@ not end up in your commit, unless you add the file again to the index!</p>
 </code></pre>
 
 <p>Let's make some more changes and add some of these changes to the index.</p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Viewing the history</h1></header>
+          <section class="small">
+              <pre><code>git log
+</code></pre>
+
+<p><img src="img/git-13.png" alt="git-13" /></p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Viewing the history</h1></header>
+          <section class="small">
+              <p><code>git log</code> has many options. The following:</p>
+
+<pre><code>git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset \
+%s %Cgreen(%cr) %C(bold blue)an&gt;%Creset' --abbrev-commit --date=relative
+</code></pre>
+
+<p>Will give you this, which gives <strong>a lot</strong> more information</p>
+
+<p><img src="img/git-11.png" alt="git-11" /></p>
+
+<p>Tip: add this in your global gitconfig as an alias: ~/.gitconfig</p>
+
+<pre><code>[alias]
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s 
+    %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit --date=relative    
+</code></pre>
 
 
 
