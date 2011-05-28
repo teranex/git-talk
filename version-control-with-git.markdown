@@ -386,10 +386,79 @@ This is done with the `git remote` command
 
 This will add my Github repository for this presentation as a remote with the name _github_
 
-Push your master branch to this new remote:
-
 # Working with remotes
 ## Pulling and pushing
+
+When you have cloned the repository:
+
+    git pull
+
+This will pull in the changes from the current branch on the origin
+
+    git push
+
+Will push your changes to the origin
+
+**However**: This will only work for '_tracking_' branches.
+
+# Working with remotes
+## Remote Branches
+
+It is important to think about remote branches as just _branches_
+
+By default, Git does not know, nor care, about relationships between branches!
+
+* local branch: **master**
+* remote ('github') branch: **github/master**
+* **Git just sees two branches**  
+
+    `git pull github master`  
+    `git push github master`
+
+* By default, no local branches are created for remote branches
+
+# Working with remotes
+## Tracking branches
+
+To create a local branch based on a remote branch:
+
+    git checkout --track -b mywork github/mywork
+
+To link an existing local branch to a remote branch:
+
+    git branch --setup-stream github/mywork
+
+You can verify this in the git config file (.git/config) in your repository:
+
+![git-15](img/git-15.png)
+
+# Working with remotes
+## Merging while pulling
+
+To better understand pulling, let's see what actually happens. Instead of using `git pull`, you also do (while on the master branch):
+
+    # pull in the new objects
+    git fetch github
+
+    # merge the remote branch with the local branch
+    git merge github/master
+
+This works exactly the same as merging two local branches!  
+
+# Working with remotes
+## Avoiding useless merge commits
+Merging a remote branch in your local branch can create a useless merge commit:
+
+![git-16](img/git-16.png)
+
+You can avoid this by rebasing instead of merging:
+
+    git pull --rebase
+
+or, if you want to do it manually:
+
+    git fetch github
+    git rebase github/master
 
 # Suggested reading and resources
 

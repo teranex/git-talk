@@ -1173,8 +1173,6 @@ git rebase origin
 
 <p>This will add my Github repository for this presentation as a remote with the name <em>github</em></p>
 
-<p>Push your master branch to this new remote:</p>
-
 
 
           </section>
@@ -1184,6 +1182,115 @@ git rebase origin
           <header><h1>Working with remotes</h1></header>
           <section class="small">
               <h2>Pulling and pushing</h2>
+
+<p>When you have cloned the repository:</p>
+
+<pre><code>git pull
+</code></pre>
+
+<p>This will pull in the changes from the current branch on the origin</p>
+
+<pre><code>git push
+</code></pre>
+
+<p>Will push your changes to the origin</p>
+
+<p><strong>However</strong>: This will only work for '<em>tracking</em>' branches.</p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Working with remotes</h1></header>
+          <section class="small">
+              <h2>Remote Branches</h2>
+
+<p>It is important to think about remote branches as just <em>branches</em></p>
+
+<p>By default, Git does not know, nor care, about relationships between branches!</p>
+
+<ul>
+<li>local branch: <strong>master</strong></li>
+<li>remote ('github') branch: <strong>github/master</strong></li>
+<li><p><strong>Git just sees two branches</strong></p>
+
+<p>  <code>git pull github master</code><br/>
+  <code>git push github master</code></p></li>
+<li><p>By default, no local branches are created for remote branches</p></li>
+</ul>
+
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Working with remotes</h1></header>
+          <section class="small">
+              <h2>Tracking branches</h2>
+
+<p>To create a local branch based on a remote branch:</p>
+
+<pre><code>git checkout --track -b mywork github/mywork
+</code></pre>
+
+<p>To link an existing local branch to a remote branch:</p>
+
+<pre><code>git branch --setup-stream github/mywork
+</code></pre>
+
+<p>You can verify this in the git config file (.git/config) in your repository:</p>
+
+<p><img src="img/git-15.png" alt="git-15" /></p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Working with remotes</h1></header>
+          <section class="small">
+              <h2>Merging while pulling</h2>
+
+<p>To better understand pulling, let's see what actually happens. Instead of using <code>git pull</code>, you also do (while on the master branch):</p>
+
+<pre><code># pull in the new objects
+git fetch github
+
+# merge the remote branch with the local branch
+git merge github/master
+</code></pre>
+
+<p>This works exactly the same as merging two local branches!</p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Working with remotes</h1></header>
+          <section class="small">
+              <h2>Avoiding useless merge commits</h2>
+
+<p>Merging a remote branch in your local branch can create a useless merge commit:</p>
+
+<p><img src="img/git-16.png" alt="git-16" /></p>
+
+<p>You can avoid this by rebasing instead of merging:</p>
+
+<pre><code>git pull --rebase
+</code></pre>
+
+<p>or, if you want to do it manually:</p>
+
+<pre><code>git fetch github
+git rebase github/master
+</code></pre>
 
 
 
