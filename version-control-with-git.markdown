@@ -527,3 +527,4 @@ Sources of images and inspiration:
 
 * Pro Git: [http://progit.org/](http://progit.org/)
 * The Git Community Book: [http://book.git-scm.com/](http://book.git-scm.com/)
+* Webspecies (image of Git kid): [http://blog.webspecies.co.uk/2011-05-23/the-new-era-of-php-frameworks.html](http://blog.webspecies.co.uk/2011-05-23/the-new-era-of-php-frameworks.html)
