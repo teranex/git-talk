@@ -514,6 +514,7 @@ If you don't have commit access on drupal.org, you can contribute by creating gi
 
 * Drupal Git documentation: [http://drupal.org/documentation/git](http://drupal.org/documentation/git)
 * the git man-pages
+* the .git-folder of a repository (just take a look, it's interesting)
 * Pro Git: [http://progit.org/](http://progit.org/)
 * The Git Community Book: [http://book.git-scm.com/](http://book.git-scm.com/)
 * StackOverflow: [http://stackoverflow.com](http://stackoverflow.com/questions/tagged/git) has a lot of valuable questions and answers related to Git.
