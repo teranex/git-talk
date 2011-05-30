@@ -231,12 +231,13 @@ Once you have merged your work on a specific feature back into your master branc
 
 # Merging
 
-When you have been working on a (feature) branch for a while you will probably want to merge it back into your master or develop branch (whatever name you use for it)
+When you have been working on a (feature) branch for a while you will probably want to merge those branches back together.
 
+    # to merge the origin branch back into your mywork branch (to bring it up to date)
     # checkout the target branch
-    git checkout master
-    # merge our mywork branch into master
-    git merge mywork
+    git checkout mywork
+    # merge the branch into the current branch
+    git merge origin
 
 Now your repository looks like this: (Notice that commit C7 has two parents)
 ![git-06](img/git-06.png)
@@ -437,6 +438,14 @@ By default, Git does not know, nor care, about relationships between branches!
 * By default, no local branches are created for remote branches
 
 # Working with remotes
+## Remote Branches
+
+You can get a good overview of all your local and remote branches and how they are trakcing with:
+    git branch -avv
+
+![img-19](img/git-19.png)
+
+# Working with remotes
 ## Tracking branches
 
 To create a local branch based on a remote branch:
@@ -528,4 +537,4 @@ Sources of images and inspiration:
 
 * Pro Git: [http://progit.org/](http://progit.org/)
 * The Git Community Book: [http://book.git-scm.com/](http://book.git-scm.com/)
-* Webspecies (image of Git kid): [http://blog.webspecies.co.uk/2011-05-23/the-new-era-of-php-frameworks.html](http://blog.webspecies.co.uk/2011-05-23/the-new-era-of-php-frameworks.html)
+* Webspecies (image of Git kid): [http://blog.webspecies.co.uk](http://blog.webspecies.co.uk/2011-05-23/the-new-era-of-php-frameworks.html)
