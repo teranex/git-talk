@@ -529,7 +529,7 @@ And you don't do ``git push``, but:
 
 # Git Flow
 
-To use the 'Git Flow' branching strategy a Git plugin is available: git-flow. This plugin makes it really easy to follow Git Flow:
+To use the '[Git Flow](https://github.com/nvie/gitflow)' branching strategy a Git plugin is available: git-flow. This plugin makes it really easy to follow Git Flow:
 
 First initialize it to configure the names. (I recommend to use the default)
     git flow init
