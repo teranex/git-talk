@@ -497,6 +497,7 @@ or, if you want to do it manually:
 * meld: mergetool for linux, has support for git
 
 ![git-17](img/git-17.png)
+
 # Git and Subversion (and friends)
 
 Git has plugins available to migrate from and/or integrate into other versioning systems as well. One such plugin is **git-svn**.
@@ -521,6 +522,28 @@ Now you can work as usual with your Git repository. Except... instead of running
 And you don't do ``git push``, but:
 
     git svn dcommit
+
+# Git Flow
+
+![git-20](img/git-20.png)
+
+# Git Flow
+
+To use the 'Git Flow' branching strategy a Git plugin is available: git-flow. This plugin makes it really easy to follow Git Flow:
+
+First initialize it to configure the names. (I recommend to use the default)
+    git flow init
+
+To start a feature branch:
+
+    git flow feature start my-exiting-feature
+
+To publish the feature (push it to the remote)
+
+    git flow feature publish my-exiting-feature
+
+To finalize the branch:
+    git flow feature finish my-exiting-feature
 
 # Git and Drupal
 

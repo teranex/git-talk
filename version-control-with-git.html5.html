@@ -1353,7 +1353,6 @@ git rebase github/master
           <header><h1>Some really cool tools</h1></header>
           <section class="small">
               <ul>
-<li>The git log alias I showed earlier is really useful</li>
 <li>Gitk: Part of the official Git distro, but it's UGLY UGLY UGLY</li>
 <li>Giggle &amp; GitX: better looking, for Gnome &amp; Mac</li>
 <li>tig: commandline. Also very useful to stage/unstage files</li>
@@ -1363,6 +1362,90 @@ git rebase github/master
 
 
 <p><img src="img/git-17.png" alt="git-17" /></p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Git and Subversion (and friends)</h1></header>
+          <section class="small">
+              <p>Git has plugins available to migrate from and/or integrate into other versioning systems as well. One such plugin is <strong>git-svn</strong>.</p>
+
+<p>With git-svn you can:</p>
+
+<ul>
+<li>migrate an existing subversion repository to a git repository, including all the history.</li>
+<li>use Git locally to do your work, but push to a central Subversion server.</li>
+</ul>
+
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Git and Subversion</h1></header>
+          <section class="small">
+              <p>To locally use Git and push to a central Subversion server:</p>
+
+<p>First 'clone' the Subversion repository into a local Git repo</p>
+
+<pre><code>git svn clone -s http://svn.example.com/myproject
+# the -s means the subversion repo has a standard layout (trunk/ etc)
+</code></pre>
+
+<p>Now you can work as usual with your Git repository. Except... instead of running <code>git pull</code> to get the changes from other people, you now do:</p>
+
+<pre><code>git svn rebase
+</code></pre>
+
+<p>And you don't do <code>git push</code>, but:</p>
+
+<pre><code>git svn dcommit
+</code></pre>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Git Flow</h1></header>
+          <section class="small">
+              <p><img src="img/git-20.png" alt="git-20" /></p>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1>Git Flow</h1></header>
+          <section class="small">
+              <p>To use the 'Git Flow' branching strategy a Git plugin is available: git-flow. This plugin makes it really easy to follow Git Flow:</p>
+
+<p>First initialize it to configure the names. (I recommend to use the default)</p>
+
+<pre><code>git flow init
+</code></pre>
+
+<p>To start a feature branch:</p>
+
+<pre><code>git flow feature start my-exiting-feature
+</code></pre>
+
+<p>To publish the feature (push it to the remote)</p>
+
+<pre><code>git flow feature publish my-exiting-feature
+</code></pre>
+
+<p>To finalize the branch:</p>
+
+<pre><code>git flow feature finish my-exiting-feature
+</code></pre>
 
 
 
