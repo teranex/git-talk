@@ -490,7 +490,6 @@ or, if you want to do it manually:
 
 # Some really cool tools
 
-* The git log alias I showed earlier is really useful
 * Gitk: Part of the official Git distro, but it's UGLY UGLY UGLY
 * Giggle & GitX: better looking, for Gnome & Mac
 * tig: commandline. Also very useful to stage/unstage files
@@ -498,6 +497,30 @@ or, if you want to do it manually:
 * meld: mergetool for linux, has support for git
 
 ![git-17](img/git-17.png)
+# Git and Subversion (and friends)
+
+Git has plugins available to migrate from and/or integrate into other versioning systems as well. One such plugin is **git-svn**.
+
+With git-svn you can:
+
+* migrate an existing subversion repository to a git repository, including all the history.
+* use Git locally to do your work, but push to a central Subversion server.
+
+# Git and Subversion
+To locally use Git and push to a central Subversion server:
+
+First 'clone' the Subversion repository into a local Git repo
+
+    git svn clone -s http://svn.example.com/myproject
+    # the -s means the subversion repo has a standard layout (trunk/ etc)
+
+Now you can work as usual with your Git repository. Except... instead of running ``git pull`` to get the changes from other people, you now do:
+
+    git svn rebase
+
+And you don't do ``git push``, but:
+
+    git svn dcommit
 
 # Git and Drupal
 
