@@ -460,8 +460,6 @@
           <header></header>
           <section class="small">
               <!-- _S9SLIDE_  -->
-
-
 <p><img src="img/main-slide.png" alt="main" /></p>
 
 
@@ -470,17 +468,16 @@
         </div>
                 
         <div class="slide">
-          <header><h1>Who am I?</h1></header>
+          <header><h1 id="who-am-i">Who am I?</h1></header>
           <section class="small">
               <ul>
-<li>Jeroen Budts</li>
-<li>PHP &amp; Drupal Developer</li>
-<li>At <a href="http://inuits.eu">Inuits</a> - An Open Source Consultancy Company</li>
-<li><a href="http://budts.be">http://budts.be</a></li>
-<li>@teranex</li>
-<li>will become a father in November</li>
+  <li>Jeroen Budts</li>
+  <li>PHP &amp; Drupal Developer</li>
+  <li>At <a href="http://inuits.eu">Inuits</a> - An Open Source Consultancy Company</li>
+  <li><a href="http://budts.be">http://budts.be</a></li>
+  <li>@teranex</li>
+  <li>will become a father in November</li>
 </ul>
-
 
 <p><img src="img/git-00_2.png" alt="git-00" /></p>
 
@@ -490,17 +487,16 @@
         </div>
                 
         <div class="slide">
-          <header><h1>Overview</h1></header>
+          <header><h1 id="overview">Overview</h1></header>
           <section class="small">
               <ul>
-<li>Basic Git usage</li>
-<li>How Git stores it's stuff</li>
-<li>More advanced Git usage
-(branching, merging, rebasing, remotes, ...)</li>
-<li>Some cool Git tools</li>
-<li>Git and Drupal</li>
+  <li>Basic Git usage</li>
+  <li>How Git stores it&rsquo;s stuff</li>
+  <li>More advanced Git usage
+(branching, merging, rebasing, remotes, &hellip;)</li>
+  <li>Some cool Git tools</li>
+  <li>Git and Drupal</li>
 </ul>
-
 
 
 
@@ -508,46 +504,41 @@
         </div>
                 
         <div class="slide">
-          <header><h1>What is Git?</h1></header>
+          <header><h1 id="what-is-git">What is Git?</h1></header>
           <section class="small">
-              <blockquote><p>"Git is a free &amp; open source, distributed version control system designed to
-handle everything from small to very large projects with speed and efficiency."</p></blockquote>
+              <blockquote>
+  <p>&ldquo;Git is a free &amp; open source, distributed version control system designed to 
+handle everything from small to very large projects with speed and efficiency.&rdquo;  </p>
+</blockquote>
 
 <ul>
-<li>Distributed</li>
-<li>Open Source</li>
-<li>Fast</li>
-<li>Created by Linus Torvalds (Linux)</li>
+  <li>Distributed</li>
+  <li>Open Source</li>
+  <li>Fast</li>
+  <li>Created by Linus Torvalds (Linux)</li>
 </ul>
 
 
 
-
           </section>
         </div>
                 
         <div class="slide">
-          <header><h1>Basic Git Usage</h1></header>
+          <header><h1 id="basic-git-usage">Basic Git Usage</h1></header>
           <section class="small">
-              <p>First initialize the git repository:</p>
+              <p>First initialize the git repository:
+    git init</p>
 
-<pre><code>git init
-</code></pre>
+<p>Then add files
+    git add -A
+    # or
+    git add .
+    # or
+    git add myfile.txt
+    git add myotherfile.rb</p>
 
-<p>Then add files</p>
-
-<pre><code>git add -A
-# or
-git add .
-# or
-git add myfile.txt
-git add myotherfile.rb
-</code></pre>
-
-<p>And commit the files</p>
-
-<pre><code>git commit
-</code></pre>
+<p>And commit the files
+    git commit</p>
 
 
 
@@ -555,7 +546,7 @@ git add myotherfile.rb
         </div>
                 
         <div class="slide">
-          <header><h1>The Index (Staging Area)</h1></header>
+          <header><h1 id="the-index-staging-area">The Index (Staging Area)</h1></header>
           <section class="small">
               <p>The index contains the changes to will be added to your next commit. Your commit will /not/ contain the changes in your working directory. Only the changes that were added to the index!</p>
 
@@ -567,11 +558,11 @@ git add myotherfile.rb
         </div>
                 
         <div class="slide">
-          <header><h1>The Index (Staging Area)</h1></header>
+          <header><h1 id="the-index-staging-area-1">The Index (Staging Area)</h1></header>
           <section class="small">
               <p>If you add a file, or a part of a file, to the index, a copy is made of that file. When you commit, it is that copy which ends up in the commit.</p>
 
-<p><strong>Important</strong>: if you make changes to the file after adding it to the index, those changes will
+<p><strong>Important</strong>: if you make changes to the file after adding it to the index, those changes will 
 not end up in your commit, unless you add the file again to the index!</p>
 
 <pre><code>`git diff`  
@@ -581,17 +572,13 @@ not end up in your commit, unless you add the file again to the index!</p>
 # show the diff of your index
 </code></pre>
 
-<p>If you modify files, you need to '<em>stage</em>' them again, by running <code>git add</code>.</p>
+<p>If you modify files, you need to &lsquo;<em>stage</em>&rsquo; them again, by running <code>git add</code>.  </p>
 
-<p>If you only modified files (not added new ones) you can skip staging with:</p>
+<p>If you only modified files (not added new ones) you can skip staging with:
+    git commit -a</p>
 
-<pre><code>git commit -a
-</code></pre>
-
-<p>You can also add only parts of a modified file:</p>
-
-<pre><code>git add -p myfile.txt
-</code></pre>
+<p>You can also add only parts of a modified file:
+    git add -p myfile.txt</p>
 
 
 
@@ -599,7 +586,7 @@ not end up in your commit, unless you add the file again to the index!</p>
         </div>
                 
         <div class="slide">
-          <header><h1>The Index (Staging Area)</h1></header>
+          <header><h1 id="the-index-staging-area-2">The Index (Staging Area)</h1></header>
           <section class="small">
               <pre><code>git status # show the status of your repo
 </code></pre>
@@ -612,7 +599,7 @@ not end up in your commit, unless you add the file again to the index!</p>
         </div>
                 
         <div class="slide">
-          <header><h1>Viewing the history</h1></header>
+          <header><h1 id="viewing-the-history">Viewing the history</h1></header>
           <section class="small">
               <pre><code>git log
 </code></pre>
@@ -625,7 +612,7 @@ not end up in your commit, unless you add the file again to the index!</p>
         </div>
                 
         <div class="slide">
-          <header><h1>Viewing the history</h1></header>
+          <header><h1 id="viewing-the-history-1">Viewing the history</h1></header>
           <section class="small">
               <p><code>git log</code> has many options. The following:</p>
 
@@ -650,33 +637,23 @@ not end up in your commit, unless you add the file again to the index!</p>
         </div>
                 
         <div class="slide">
-          <header><h1>Undoing changes</h1></header>
+          <header><h1 id="undoing-changes">Undoing changes</h1></header>
           <section class="small">
-              <h2>Checkout</h2>
+              <p>## Checkout
+Checkout a single file. Notice the dashes: <code>git checkout</code> is also used in other cases, this makes it clear to Git that you are pointing to a single file.
+    git checkout &ndash; /path/to/file    # restore version from index
+    git checkout HEAD /path/to/file  # restore to latest committed version</p>
 
-<p>Checkout a single file. Notice the dashes: <code>git checkout</code> is also used in other cases, this makes it clear to Git that you are pointing to a single file.</p>
+<h2 id="reset">Reset</h2>
+<p>Reset all the changes in your working copy
+    git reset [&ndash;hard]</p>
 
-<pre><code>git checkout -- /path/to/file    # restore version from index
-git checkout HEAD /path/to/file  # restore to latest committed version
-</code></pre>
+<h2 id="revert">Revert</h2>
+<p>Write a reversed version of an existing commit. This is very useful if you have already pushed the commit
+    git revert [commit-sha]</p>
 
-<h2>Reset</h2>
-
-<p>Reset all the changes in your working copy</p>
-
-<pre><code>git reset [--hard]
-</code></pre>
-
-<h2>Revert</h2>
-
-<p>Write a reversed version of an existing commit. This is very useful if you have already pushed the commit</p>
-
-<pre><code>git revert [commit-sha]
-</code></pre>
-
-<h2>Rebase</h2>
-
-<p>We'll discuss this later</p>
+<h2 id="rebase">Rebase</h2>
+<p>We&rsquo;ll discuss this later</p>
 
 
 
@@ -684,13 +661,13 @@ git checkout HEAD /path/to/file  # restore to latest committed version
         </div>
                 
         <div class="slide">
-          <header><h1>How Git stores your data</h1></header>
+          <header><h1 id="how-git-stores-your-data">How Git stores your data</h1></header>
           <section class="small">
               <p>Knowing how Git stores all your data will give you a better understanding of the fundamentals and Git will become a lot more predictable</p>
 
-<p>The most important point to remember:</p>
+<p>The most important point to remember:  </p>
 
-<p><strong> Basically a Git repository is a database of objects </strong></p>
+<p>** Basically a Git repository is a database of objects **</p>
 
 
 
@@ -698,18 +675,17 @@ git checkout HEAD /path/to/file  # restore to latest committed version
         </div>
                 
         <div class="slide">
-          <header><h1>How Git stores your data</h1></header>
+          <header><h1 id="how-git-stores-your-data-1">How Git stores your data</h1></header>
           <section class="small">
               <p>The most important types of objects:</p>
 
 <ul>
-<li>blobs</li>
-<li>trees</li>
-<li>commits</li>
+  <li>blobs</li>
+  <li>trees</li>
+  <li>commits</li>
 </ul>
 
-
-<p>Let's study those in a bit more detail</p>
+<p>Let&rsquo;s study those in a bit more detail</p>
 
 
 
@@ -717,17 +693,16 @@ git checkout HEAD /path/to/file  # restore to latest committed version
         </div>
                 
         <div class="slide">
-          <header><h1>Blobs</h1></header>
+          <header><h1 id="blobs">Blobs</h1></header>
           <section class="small">
-              <p>Git stores the <em>contents</em> of a file in a 'blob'.</p>
+              <p>Git stores the <em>contents</em> of a file in a &lsquo;blob&rsquo;.</p>
 
 <ul>
-<li>does not contain any meta data</li>
-<li>a blob never changes</li>
-<li>a hash is calculated as the blob name</li>
-<li>the hash will always be the same for the same contents</li>
+  <li>does not contain any meta data</li>
+  <li>a blob never changes</li>
+  <li>a hash is calculated as the blob name</li>
+  <li>the hash will always be the same for the same contents</li>
 </ul>
-
 
 <p>some examples:</p>
 
@@ -744,17 +719,16 @@ a8784b043f12b4b0c9114c55ebf33f5c9b44ce8f
         </div>
                 
         <div class="slide">
-          <header><h1>Trees</h1></header>
+          <header><h1 id="trees">Trees</h1></header>
           <section class="small">
               <p>A tree is a like a directory</p>
 
 <ul>
-<li>Can contain references to 0, 1 or more blobs</li>
-<li>Can contain references to 0, 1 or more other trees</li>
-<li>Contains the meta data about the files</li>
-<li>Itself also identified by a hash</li>
+  <li>Can contain references to 0, 1 or more blobs</li>
+  <li>Can contain references to 0, 1 or more other trees</li>
+  <li>Contains the meta data about the files</li>
+  <li>Itself also identified by a hash</li>
 </ul>
-
 
 <p><img src="img/git-03_2.png" alt="git-03" /></p>
 
@@ -764,22 +738,20 @@ a8784b043f12b4b0c9114c55ebf33f5c9b44ce8f
         </div>
                 
         <div class="slide">
-          <header><h1>Commits</h1></header>
+          <header><h1 id="commits">Commits</h1></header>
           <section class="small">
               <p>If you think about Git, think about commits!</p>
 
 <ul>
-<li>Contains a reference to one tree object</li>
-<li>Contains references to one or more other commits
-
-<ul>
-<li>one exception: the very first commit in the repo</li>
+  <li>Contains a reference to one tree object</li>
+  <li>Contains references to one or more other commits
+    <ul>
+      <li>one exception: the very first commit in the repo</li>
+    </ul>
+  </li>
+  <li>A commit usually points to it&rsquo;s parent commit</li>
+  <li>In case of a merge, it can point to two or more commits (one commit for each branch which you merged together)</li>
 </ul>
-</li>
-<li>A commit usually points to it's parent commit</li>
-<li>In case of a merge, it can point to two or more commits (one commit for each branch which you merged together)</li>
-</ul>
-
 
 
 
@@ -787,11 +759,11 @@ a8784b043f12b4b0c9114c55ebf33f5c9b44ce8f
         </div>
                 
         <div class="slide">
-          <header><h1>Commits</h1></header>
+          <header><h1 id="commits-1">Commits</h1></header>
           <section class="small">
               <p><img src="img/git-04.png" alt="git-04" /></p>
 
-<p>Did I mention that you should think in terms of commits, when working with Git?</p>
+<p>Did I mention that you should think in terms of commits, when working with Git?  </p>
 
 <p>If you understand commits, you basically understand Git.</p>
 
@@ -801,30 +773,26 @@ a8784b043f12b4b0c9114c55ebf33f5c9b44ce8f
         </div>
                 
         <div class="slide">
-          <header><h1>Git References or "refs"</h1></header>
+          <header><h1 id="git-references-or-refs">Git References or &ldquo;refs&rdquo;</h1></header>
           <section class="small">
               <p>Because a commit hash is very difficult to remember and not really useful to work with, Git uses references to point to specific commits.</p>
 
-<h2>HEAD</h2>
-
+<h2 id="head">HEAD</h2>
 <p>One such reference is <strong>HEAD</strong></p>
 
 <ul>
-<li>It points to the commit which is currently checked out into your working directory</li>
+  <li>It points to the commit which is currently checked out into your working directory</li>
 </ul>
 
-
-<h2>master</h2>
-
+<h2 id="master">master</h2>
 <p>Another important reference is <strong>master</strong></p>
 
 <ul>
-<li>master is the 'default' branch in Git</li>
-<li>when working on the master branch, the master reference and the HEAD reference point to the same commit</li>
+  <li>master is the &lsquo;default&rsquo; branch in Git</li>
+  <li>when working on the master branch, the master reference and the HEAD reference point to the same commit</li>
 </ul>
 
-
-<p>And that brings us to...</p>
+<p>And that brings us to&hellip;</p>
 
 
 
@@ -832,19 +800,18 @@ a8784b043f12b4b0c9114c55ebf33f5c9b44ce8f
         </div>
                 
         <div class="slide">
-          <header><h1>Branches</h1></header>
+          <header><h1 id="branches">Branches</h1></header>
           <section class="small">
               <p>Branches in Git are basically just references to other commits</p>
 
 <ul>
-<li>very easy to create</li>
-<li>once you get the hang of it, you will probably create branches for almost every feature you want to implement</li>
-<li>a branch has a name</li>
-<li>this name is also the reference to the most recent commit for that branch</li>
-<li>a commit can be shared by branches</li>
-<li>The point where a branch is split of from another branch, can be found by following the parents of all the commits until you find a common commit</li>
+  <li>very easy to create</li>
+  <li>once you get the hang of it, you will probably create branches for almost every feature you want to implement</li>
+  <li>a branch has a name</li>
+  <li>this name is also the reference to the most recent commit for that branch</li>
+  <li>a commit can be shared by branches</li>
+  <li>The point where a branch is split of from another branch, can be found by following the parents of all the commits until you find a common commit</li>
 </ul>
-
 
 
 
@@ -852,7 +819,7 @@ a8784b043f12b4b0c9114c55ebf33f5c9b44ce8f
         </div>
                 
         <div class="slide">
-          <header><h1>Branches</h1></header>
+          <header><h1 id="branches-1">Branches</h1></header>
           <section class="small">
               <p>Creating a branch and switching to it is easy:</p>
 
@@ -879,14 +846,13 @@ git checkout mywork
         </div>
                 
         <div class="slide">
-          <header><h1>Branches</h1></header>
+          <header><h1 id="branches-2">Branches</h1></header>
           <section class="small">
               <ul>
-<li>We are working on a branch named 'origin'</li>
-<li>At commit C2 we decide to split off a new branch named 'mywork'.</li>
-<li>Both branches originate from commit C2; commit C3 and C5 have the same parent</li>
+  <li>We are working on a branch named &lsquo;origin&rsquo;</li>
+  <li>At commit C2 we decide to split off a new branch named &lsquo;mywork&rsquo;.</li>
+  <li>Both branches originate from commit C2; commit C3 and C5 have the same parent</li>
 </ul>
-
 
 <p><img src="img/git-05.png" alt="git-05" /></p>
 
@@ -896,7 +862,7 @@ git checkout mywork
         </div>
                 
         <div class="slide">
-          <header><h1>Merging</h1></header>
+          <header><h1 id="merging">Merging</h1></header>
           <section class="small">
               <p>When you have been working on a (feature) branch for a while you will probably want to merge those branches back together.</p>
 
@@ -916,26 +882,25 @@ git merge origin
         </div>
                 
         <div class="slide">
-          <header><h1>Merging</h1></header>
+          <header><h1 id="merging-1">Merging</h1></header>
           <section class="small">
               <p>When merging two or more branches there are two possibilities:</p>
 
 <ul>
-<li>Merge commit</li>
-<li>Fast Forward</li>
+  <li>Merge commit</li>
+  <li>Fast Forward  </li>
 </ul>
 
-
-<h2>Merge commit</h2>
-
+<h2 id="merge-commit">Merge commit</h2>
 <ul>
-<li>When both branches have new commits a merge commit is created.</li>
-<li><p>Git automatically proposes a commit message:</p>
+  <li>When both branches have new commits a merge commit is created.</li>
+  <li>
+    <p>Git automatically proposes a commit message:  </p>
 
-<p>  <code>Merge branch 'mywork' into master</code></p></li>
-<li>The commit has two or more parents</li>
+    <p><code>Merge branch 'mywork' into master</code></p>
+  </li>
+  <li>The commit has two or more parents</li>
 </ul>
-
 
 
 
@@ -943,19 +908,15 @@ git merge origin
         </div>
                 
         <div class="slide">
-          <header><h1>Merging</h1></header>
+          <header><h1 id="merging-2">Merging</h1></header>
           <section class="small">
-              <h2>Fast Forward</h2>
-
-<ul>
-<li>When the target branch does not have new commits</li>
-<li>No merge commit is created</li>
-<li>In fact nothing much happens</li>
-<li>Except: The reference for the target branch is simply changed to point the same commit as the source branch</li>
-<li>This is an ideal situation and can never go wrong</li>
-<li>Obviously you are not always this lucky (→ rebasing)</li>
-</ul>
-
+              <p>##Fast Forward
+* When the target branch does not have new commits
+* No merge commit is created
+* In fact nothing much happens
+* Except: The reference for the target branch is simply changed to point the same commit as the source branch
+* This is an ideal situation and can never go wrong
+* Obviously you are not always this lucky (→ rebasing)</p>
 
 
 
@@ -963,11 +924,10 @@ git merge origin
         </div>
                 
         <div class="slide">
-          <header><h1>Merging</h1></header>
+          <header><h1 id="merging-3">Merging</h1></header>
           <section class="small">
-              <h2>Fast Forward</h2>
-
-<p><img src="img/git-07-before.png" alt="git-07-before" /> Merge the 'mywork' branch into origin
+              <p>## Fast Forward
+<img src="img/git-07-before.png" alt="git-07-before" /> Merge the &lsquo;mywork&rsquo; branch into origin
 <img src="img/git-07-after.png" alt="git-07-after" /> The origin branch is simply fast-forwarded</p>
 
 
@@ -976,28 +936,26 @@ git merge origin
         </div>
                 
         <div class="slide">
-          <header><h1>Rebasing</h1></header>
+          <header><h1 id="rebasing">Rebasing</h1></header>
           <section class="small">
               <p>Instead of merging (with merge commits) you can also rebase (so you can then fast forward)</p>
 
-<p>Some people will tell you that this is very harmful, it can break your repository and destroy the universe.<br/>
+<p>Some people will tell you that this is very harmful, it can break your repository and destroy the universe.<br />
 This is <strong>NOT TRUE</strong>. (At least if you know what you are doing)</p>
 
-<h2>So what is 'rebasing'?</h2>
-
+<h2 id="so-what-is-rebasing">So what is &lsquo;rebasing&rsquo;?</h2>
 <p>By rebasing your commits you can actually rewrite your history:</p>
 
 <ul>
-<li>Edit a commit message</li>
-<li>Add missing files to a commit</li>
-<li>Reorder your commits</li>
-<li>Modify the parent of a commit</li>
-<li>Merge a few commits together into a single commit</li>
-<li>Delete commits from the history</li>
-<li>...</li>
-<li>And break your repository if you want :)</li>
+  <li>Edit a commit message</li>
+  <li>Add missing files to a commit</li>
+  <li>Reorder your commits</li>
+  <li>Modify the parent of a commit</li>
+  <li>Merge a few commits together into a single commit</li>
+  <li>Delete commits from the history</li>
+  <li>&hellip;</li>
+  <li>And break your repository if you want :)</li>
 </ul>
-
 
 
 
@@ -1005,17 +963,17 @@ This is <strong>NOT TRUE</strong>. (At least if you know what you are doing)</p>
         </div>
                 
         <div class="slide">
-          <header><h1>Rebasing</h1></header>
+          <header><h1 id="rebasing-1">Rebasing</h1></header>
           <section class="small">
-              <h2>How not to break your repo?</h2>
+              <p>## How not to break your repo?</p>
 
-<p>Do not rebase commits which have already been pushed to other people</p>
+<p>Do not rebase commits which have already been pushed to other people  </p>
 
-<p>Do not rebase commits which have already been pushed to other people</p>
+<p>Do not rebase commits which have already been pushed to other people  </p>
 
-<p>Do not rebase commits which have already been pushed to other people</p>
+<p>Do not rebase commits which have already been pushed to other people  </p>
 
-<p>(<em>I'l explain how to push later</em>)</p>
+<p>(<em>I&rsquo;l explain how to push later</em>)</p>
 
 <p>Each commit which is rebased will get a new, different, hash. People (and Git) which pull this new hash will get confused.</p>
 
@@ -1027,16 +985,15 @@ This is <strong>NOT TRUE</strong>. (At least if you know what you are doing)</p>
         </div>
                 
         <div class="slide">
-          <header><h1>Rebasing</h1></header>
+          <header><h1 id="rebasing-2">Rebasing</h1></header>
           <section class="small">
-              <h2>Amending changes</h2>
+              <p>## Amending changes</p>
 
 <ul>
-<li>The easiest and 'safest' kind of rebase</li>
-<li>Only possible for the most recent commit</li>
-<li>Let's you add missing files and modify the commit message</li>
+  <li>The easiest and &lsquo;safest&rsquo; kind of rebase </li>
+  <li>Only possible for the most recent commit</li>
+  <li>Let&rsquo;s you add missing files and modify the commit message  </li>
 </ul>
-
 
 <p>After modifying your index again:</p>
 
@@ -1049,17 +1006,16 @@ This is <strong>NOT TRUE</strong>. (At least if you know what you are doing)</p>
         </div>
                 
         <div class="slide">
-          <header><h1>Rebasing</h1></header>
+          <header><h1 id="rebasing-3">Rebasing</h1></header>
           <section class="small">
-              <h2>... on another branch</h2>
+              <p>## &hellip; on another branch
+This is an alternative approach to merging, with a merge commit.</p>
 
-<p>This is an alternative approach to merging, with a merge commit.</p>
-
-<p>Let's reuse the example:</p>
+<p>Let&rsquo;s reuse the example:</p>
 
 <p><img src="img/git-05.png" alt="git-05" /></p>
 
-<p>Now you  want to merge 'mywork' into 'origin' without creating a merge commit</p>
+<p>Now you  want to merge &lsquo;mywork&rsquo; into &lsquo;origin&rsquo; without creating a merge commit</p>
 
 
 
@@ -1067,11 +1023,10 @@ This is <strong>NOT TRUE</strong>. (At least if you know what you are doing)</p>
         </div>
                 
         <div class="slide">
-          <header><h1>Rebasing</h1></header>
+          <header><h1 id="rebasing-4">Rebasing</h1></header>
           <section class="small">
-              <h2>... on another branch</h2>
-
-<p>What we did before:</p>
+              <p>## &hellip; on another branch
+What we did before:</p>
 
 <pre><code>git checkout origin
 git merge mywork
@@ -1092,9 +1047,9 @@ git merge mywork
         </div>
                 
         <div class="slide">
-          <header><h1>Rebasing</h1></header>
+          <header><h1 id="rebasing-5">Rebasing</h1></header>
           <section class="small">
-              <h2>... on another branch</h2>
+              <p>## &hellip; on another branch</p>
 
 <pre><code># on the mywork branch
 git rebase origin
@@ -1108,9 +1063,9 @@ git rebase origin
         </div>
                 
         <div class="slide">
-          <header><h1>Rebasing</h1></header>
+          <header><h1 id="rebasing-6">Rebasing</h1></header>
           <section class="small">
-              <h2>... on another branch</h2>
+              <p>## &hellip; on another branch</p>
 
 <p><img src="img/git-09.png" alt="git-09" /></p>
 
@@ -1120,9 +1075,9 @@ git rebase origin
         </div>
                 
         <div class="slide">
-          <header><h1>Rebasing</h1></header>
+          <header><h1 id="rebasing-7">Rebasing</h1></header>
           <section class="small">
-              <h2>... on another branch</h2>
+              <p>## &hellip; on another branch</p>
 
 <p><img src="img/git-10.png" alt="git-10" /></p>
 
@@ -1132,13 +1087,13 @@ git rebase origin
         </div>
                 
         <div class="slide">
-          <header><h1>Rebasing</h1></header>
+          <header><h1 id="rebasing-8">Rebasing</h1></header>
           <section class="small">
-              <h2>Interactively</h2>
+              <p>## Interactively</p>
 
-<p>With interactive rebasing you can really rewrite history the way you want it to be. ...And break your repository.</p>
+<p>With interactive rebasing you can really rewrite history the way you want it to be. &hellip;And break your repository.</p>
 
-<p>Rebase the commits since &lt;commit-hash></p>
+<p>Rebase the commits since <commit-hash /></p>
 
 <pre><code>git rebase --interactive &lt;commit-hash&gt;
 </code></pre>
@@ -1153,9 +1108,9 @@ git rebase origin
         </div>
                 
         <div class="slide">
-          <header><h1>Rebasing</h1></header>
+          <header><h1 id="rebasing-9">Rebasing</h1></header>
           <section class="small">
-              <h2>Interactively</h2>
+              <p>## Interactively</p>
 
 <p>To rebase the most recent 3 commits:</p>
 
@@ -1170,7 +1125,7 @@ git rebase origin
         </div>
                 
         <div class="slide">
-          <header><h1>Working with remotes</h1></header>
+          <header><h1 id="working-with-remotes">Working with remotes</h1></header>
           <section class="small">
               <p>To share your work with other people you have a few options. One of these is to work with remotes</p>
 
@@ -1189,17 +1144,15 @@ git rebase origin
         </div>
                 
         <div class="slide">
-          <header><h1>Working with remotes</h1></header>
+          <header><h1 id="working-with-remotes-1">Working with remotes</h1></header>
           <section class="small">
-              <h2>Manually adding remotes</h2>
-
-<p>Sometimes you will want to add a remote</p>
+              <p>## Manually adding remotes
+Sometimes you will want to add a remote</p>
 
 <ul>
-<li>Because you had already created the repository</li>
-<li>Or maybe because you want to add one or more additional remotes</li>
+  <li>Because you had already created the repository</li>
+  <li>Or maybe because you want to add one or more additional remotes</li>
 </ul>
-
 
 <p>This is done with the <code>git remote</code> command</p>
 
@@ -1214,9 +1167,9 @@ git rebase origin
         </div>
                 
         <div class="slide">
-          <header><h1>Working with remotes</h1></header>
+          <header><h1 id="working-with-remotes-2">Working with remotes</h1></header>
           <section class="small">
-              <h2>Pulling and pushing</h2>
+              <p>## Pulling and pushing</p>
 
 <p>When you have cloned the repository:</p>
 
@@ -1230,7 +1183,7 @@ git rebase origin
 
 <p>Will push your changes to the origin</p>
 
-<p><strong>However</strong>: This will only work for '<em>tracking</em>' branches.</p>
+<p><strong>However</strong>: This will only work for &lsquo;<em>tracking</em>&rsquo; branches.</p>
 
 
 
@@ -1238,24 +1191,25 @@ git rebase origin
         </div>
                 
         <div class="slide">
-          <header><h1>Working with remotes</h1></header>
+          <header><h1 id="working-with-remotes-3">Working with remotes</h1></header>
           <section class="small">
-              <h2>Remote Branches</h2>
+              <p>## Remote Branches</p>
 
 <p>It is important to think about remote branches as just <em>branches</em></p>
 
 <p>By default, Git does not know, nor care, about relationships between branches!</p>
 
 <ul>
-<li>local branch: <strong>master</strong></li>
-<li>remote ('github') branch: <strong>github/master</strong></li>
-<li><p><strong>Git just sees two branches</strong></p>
+  <li>local branch: <strong>master</strong></li>
+  <li>remote (&lsquo;github&rsquo;) branch: <strong>github/master</strong></li>
+  <li>
+    <p><strong>Git just sees two branches</strong>  </p>
 
-<p>  <code>git pull github master</code><br/>
-  <code>git push github master</code></p></li>
-<li><p>By default, no local branches are created for remote branches</p></li>
+    <p><code>git pull github master</code><br />
+  <code>git push github master</code></p>
+  </li>
+  <li>By default, no local branches are created for remote branches</li>
 </ul>
-
 
 
 
@@ -1263,14 +1217,12 @@ git rebase origin
         </div>
                 
         <div class="slide">
-          <header><h1>Working with remotes</h1></header>
+          <header><h1 id="working-with-remotes-4">Working with remotes</h1></header>
           <section class="small">
-              <h2>Remote Branches</h2>
+              <p>## Remote Branches</p>
 
-<p>You can get a good overview of all your local and remote branches and how they are trakcing with:</p>
-
-<pre><code>git branch -avv
-</code></pre>
+<p>You can get a good overview of all your local and remote branches and how they are trakcing with:
+    git branch -avv</p>
 
 <p><img src="img/git-19.png" alt="img-19" /></p>
 
@@ -1280,9 +1232,9 @@ git rebase origin
         </div>
                 
         <div class="slide">
-          <header><h1>Working with remotes</h1></header>
+          <header><h1 id="working-with-remotes-5">Working with remotes</h1></header>
           <section class="small">
-              <h2>Tracking branches</h2>
+              <p>## Tracking branches</p>
 
 <p>To create a local branch based on a remote branch:</p>
 
@@ -1304,11 +1256,11 @@ git rebase origin
         </div>
                 
         <div class="slide">
-          <header><h1>Working with remotes</h1></header>
+          <header><h1 id="working-with-remotes-6">Working with remotes</h1></header>
           <section class="small">
-              <h2>Merging while pulling</h2>
+              <p>## Merging while pulling</p>
 
-<p>To better understand pulling, let's see what actually happens. Instead of using <code>git pull</code>, you also do (while on the master branch):</p>
+<p>To better understand pulling, let&rsquo;s see what actually happens. Instead of using <code>git pull</code>, you also do (while on the master branch):</p>
 
 <pre><code># pull in the new objects
 git fetch github
@@ -1317,7 +1269,7 @@ git fetch github
 git merge github/master
 </code></pre>
 
-<p>This works exactly the same as merging two local branches!</p>
+<p>This works exactly the same as merging two local branches!  </p>
 
 
 
@@ -1325,11 +1277,10 @@ git merge github/master
         </div>
                 
         <div class="slide">
-          <header><h1>Working with remotes</h1></header>
+          <header><h1 id="working-with-remotes-7">Working with remotes</h1></header>
           <section class="small">
-              <h2>Avoiding useless merge commits</h2>
-
-<p>Merging a remote branch in your local branch can create a useless merge commit:</p>
+              <p>## Avoiding useless merge commits
+Merging a remote branch in your local branch can create a useless merge commit:</p>
 
 <p><img src="img/git-16.png" alt="git-16" /></p>
 
@@ -1350,16 +1301,15 @@ git rebase github/master
         </div>
                 
         <div class="slide">
-          <header><h1>Some really cool tools</h1></header>
+          <header><h1 id="some-really-cool-tools">Some really cool tools</h1></header>
           <section class="small">
               <ul>
-<li>Gitk: Part of the official Git distro, but it's UGLY UGLY UGLY</li>
-<li>Giggle &amp; GitX: better looking, for Gnome &amp; Mac</li>
-<li>tig: commandline. Also very useful to stage/unstage files</li>
-<li>Fugitive and gitv plugins for Vim</li>
-<li>meld: mergetool for linux, has support for git</li>
+  <li>Gitk: Part of the official Git distro, but it&rsquo;s UGLY UGLY UGLY</li>
+  <li>Giggle &amp; GitX: better looking, for Gnome &amp; Mac</li>
+  <li>tig: commandline. Also very useful to stage/unstage files</li>
+  <li>Fugitive and gitv plugins for Vim</li>
+  <li>meld: mergetool for linux, has support for git</li>
 </ul>
-
 
 <p><img src="img/git-17.png" alt="git-17" /></p>
 
@@ -1369,17 +1319,16 @@ git rebase github/master
         </div>
                 
         <div class="slide">
-          <header><h1>Git and Subversion (and friends)</h1></header>
+          <header><h1 id="git-and-subversion-and-friends">Git and Subversion (and friends)</h1></header>
           <section class="small">
               <p>Git has plugins available to migrate from and/or integrate into other versioning systems as well. One such plugin is <strong>git-svn</strong>.</p>
 
 <p>With git-svn you can:</p>
 
 <ul>
-<li>migrate an existing subversion repository to a git repository, including all the history.</li>
-<li>use Git locally to do your work, but push to a central Subversion server.</li>
+  <li>migrate an existing subversion repository to a git repository, including all the history.</li>
+  <li>use Git locally to do your work, but push to a central Subversion server.</li>
 </ul>
-
 
 
 
@@ -1387,22 +1336,22 @@ git rebase github/master
         </div>
                 
         <div class="slide">
-          <header><h1>Git and Subversion</h1></header>
+          <header><h1 id="git-and-subversion">Git and Subversion</h1></header>
           <section class="small">
               <p>To locally use Git and push to a central Subversion server:</p>
 
-<p>First 'clone' the Subversion repository into a local Git repo</p>
+<p>First &lsquo;clone&rsquo; the Subversion repository into a local Git repo</p>
 
 <pre><code>git svn clone -s http://svn.example.com/myproject
 # the -s means the subversion repo has a standard layout (trunk/ etc)
 </code></pre>
 
-<p>Now you can work as usual with your Git repository. Except... instead of running <code>git pull</code> to get the changes from other people, you now do:</p>
+<p>Now you can work as usual with your Git repository. Except&hellip; instead of running <code>git pull</code> to get the changes from other people, you now do:</p>
 
 <pre><code>git svn rebase
 </code></pre>
 
-<p>And you don't do <code>git push</code>, but:</p>
+<p>And you don&rsquo;t do <code>git push</code>, but:</p>
 
 <pre><code>git svn dcommit
 </code></pre>
@@ -1413,7 +1362,7 @@ git rebase github/master
         </div>
                 
         <div class="slide">
-          <header><h1>Git Flow</h1></header>
+          <header><h1 id="git-flow">Git Flow</h1></header>
           <section class="small">
               <p><img src="img/git-20.png" alt="git-20" /></p>
 
@@ -1423,14 +1372,12 @@ git rebase github/master
         </div>
                 
         <div class="slide">
-          <header><h1>Git Flow</h1></header>
+          <header><h1 id="git-flow-1">Git Flow</h1></header>
           <section class="small">
-              <p>To use the '<a href="https://github.com/nvie/gitflow">Git Flow</a>' branching strategy a Git plugin is available: git-flow. This plugin makes it really easy to follow Git Flow:</p>
+              <p>To use the &lsquo;<a href="https://github.com/nvie/gitflow">Git Flow</a>&rsquo; branching strategy a Git plugin is available: git-flow. This plugin makes it really easy to follow Git Flow:</p>
 
-<p>First initialize it to configure the names. (I recommend to use the default)</p>
-
-<pre><code>git flow init
-</code></pre>
+<p>First initialize it to configure the names. (I recommend to use the default)
+    git flow init</p>
 
 <p>To start a feature branch:</p>
 
@@ -1442,10 +1389,8 @@ git rebase github/master
 <pre><code>git flow feature publish my-exiting-feature
 </code></pre>
 
-<p>To finalize the branch:</p>
-
-<pre><code>git flow feature finish my-exiting-feature
-</code></pre>
+<p>To finalize the branch:
+    git flow feature finish my-exiting-feature</p>
 
 
 
@@ -1453,33 +1398,29 @@ git rebase github/master
         </div>
                 
         <div class="slide">
-          <header><h1>Git and Drupal</h1></header>
+          <header><h1 id="git-and-drupal">Git and Drupal</h1></header>
           <section class="small">
               <p>For the Drupal infrastructure (Update status, testing bot, etc) it is important to following the following conventions:</p>
 
-<h2>Branch names</h2>
-
+<h2 id="branch-names">Branch names</h2>
 <ul>
-<li>7.x</li>
-<li>7.x-1.x</li>
-<li>7.x-2.x</li>
+  <li>7.x</li>
+  <li>7.x-1.x</li>
+  <li>7.x-2.x</li>
 </ul>
-
 
 <p>development releases will be created twice a day (7.x-1.x-dev)</p>
 
-<h2>Tags</h2>
-
+<h2 id="tags">Tags</h2>
 <ul>
-<li>7.x-1.3-beta6: beta 6 release</li>
-<li>7.x-3.1: final release</li>
-<li>valid: unstable, alpha, beta, rc</li>
+  <li>7.x-1.3-beta6: beta 6 release</li>
+  <li>7.x-3.1: final release</li>
+  <li>valid: unstable, alpha, beta, rc</li>
 </ul>
 
+<p>You can create other branches for features etc  </p>
 
-<p>You can create other branches for features etc</p>
-
-<p>If you don't have commit access on drupal.org, you can contribute by creating git patches (with <code>git diff</code> or <code>git format-patch</code>)</p>
+<p>If you don&rsquo;t have commit access on drupal.org, you can contribute by creating git patches (with <code>git diff</code> or <code>git format-patch</code>)</p>
 
 
 
@@ -1487,17 +1428,16 @@ git rebase github/master
         </div>
                 
         <div class="slide">
-          <header><h1>Suggested reading and resources</h1></header>
+          <header><h1 id="suggested-reading-and-resources">Suggested reading and resources</h1></header>
           <section class="small">
               <ul>
-<li>Drupal Git documentation: <a href="http://drupal.org/documentation/git">http://drupal.org/documentation/git</a></li>
-<li>the git man-pages</li>
-<li>the .git-folder of a repository (just take a look, it's interesting)</li>
-<li>Pro Git: <a href="http://progit.org/">http://progit.org/</a></li>
-<li>The Git Community Book: <a href="http://book.git-scm.com/">http://book.git-scm.com/</a></li>
-<li>StackOverflow: <a href="http://stackoverflow.com/questions/tagged/git">http://stackoverflow.com</a> has a lot of valuable questions and answers related to Git.</li>
+  <li>Drupal Git documentation: <a href="http://drupal.org/documentation/git">http://drupal.org/documentation/git</a></li>
+  <li>the git man-pages</li>
+  <li>the .git-folder of a repository (just take a look, it&rsquo;s interesting)</li>
+  <li>Pro Git: <a href="http://progit.org/">http://progit.org/</a></li>
+  <li>The Git Community Book: <a href="http://book.git-scm.com/">http://book.git-scm.com/</a></li>
+  <li>StackOverflow: <a href="http://stackoverflow.com/questions/tagged/git">http://stackoverflow.com</a> has a lot of valuable questions and answers related to Git.</li>
 </ul>
-
 
 
 
@@ -1505,7 +1445,7 @@ git rebase github/master
         </div>
                 
         <div class="slide">
-          <header><h1>Thanks!</h1></header>
+          <header><h1 id="thanks">Thanks!</h1></header>
           <section class="small">
               <p>This presentation is licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative Commons Attribution-Non Commercial-Share Alike 3.0 license</a></p>
 
@@ -1514,9 +1454,9 @@ git rebase github/master
 <p>Sources of images and inspiration:</p>
 
 <ul>
-<li>Pro Git: <a href="http://progit.org/">http://progit.org/</a></li>
-<li>The Git Community Book: <a href="http://book.git-scm.com/">http://book.git-scm.com/</a></li>
-<li>Webspecies (image of Git kid): <a href="http://blog.webspecies.co.uk/2011-05-23/the-new-era-of-php-frameworks.html">http://blog.webspecies.co.uk</a></li>
+  <li>Pro Git: <a href="http://progit.org/">http://progit.org/</a></li>
+  <li>The Git Community Book: <a href="http://book.git-scm.com/">http://book.git-scm.com/</a></li>
+  <li>Webspecies (image of Git kid): <a href="http://blog.webspecies.co.uk/2011-05-23/the-new-era-of-php-frameworks.html">http://blog.webspecies.co.uk</a></li>
 </ul>
 
           </section>
