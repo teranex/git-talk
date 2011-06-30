@@ -333,7 +333,7 @@ What we did before:
     git checkout origin
     git merge mywork
 
-What we will do know
+What we will do now:
 
     # on the mywork branch
     git rebase origin
