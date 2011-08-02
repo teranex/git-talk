@@ -545,6 +545,42 @@ To publish the feature (push it to the remote)
 To finalize the branch:
     git flow feature finish my-exiting-feature
 
+# Working with submodules
+
+In a Git repository you can 'link' other repositories to subdirectories. This can be useful, for example when using external libraries or when building your VIM configuration, to pull in all the plugins.
+
+But submodules do not really work the way you would expect them to work, at first:
+
+* submodules must be registered in the repository
+* submodules must be pulled-in separately for each repo.
+* submodules are not updated automatically
+* submodules are not pushed automatically
+* a specific commit is referenced in the parent repo
+
+# Working with submodules
+
+First you need to add a repository as a submodule
+
+    git submodule add git://path/to/repo path/in/repo
+
+This will modify the .gitmodules file, which is part of the parent repository, and record the exact commit which is checked out in the submodule.
+Now you can commit, push, etc.
+
+When another repository pulls in the change the following steps are required:
+
+    git submodule init
+    # This will update the .git/config file for that repository
+    # and register the submodule in the repository
+
+    git submodule update
+    # This will check-out all the submodules to the correct commit
+
+To update you can checkout another commit in the submodule (for example by pulling) and commit the reference to this new commit in the parent repository.
+
+To update all the modules, you can use something like:
+
+    git submodule foreach git pull origin master
+
 # Git and Drupal
 
 For the Drupal infrastructure (Update status, testing bot, etc) it is important to following the following conventions:
@@ -584,3 +620,4 @@ Sources of images and inspiration:
 * Pro Git: [http://progit.org/](http://progit.org/)
 * The Git Community Book: [http://book.git-scm.com/](http://book.git-scm.com/)
 * Webspecies (image of Git kid): [http://blog.webspecies.co.uk](http://blog.webspecies.co.uk/2011-05-23/the-new-era-of-php-frameworks.html)
+

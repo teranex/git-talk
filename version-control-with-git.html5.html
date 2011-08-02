@@ -1032,7 +1032,7 @@ What we did before:</p>
 git merge mywork
 </code></pre>
 
-<p>What we will do know</p>
+<p>What we will do now:</p>
 
 <pre><code># on the mywork branch
 git rebase origin
@@ -1398,6 +1398,59 @@ git rebase github/master
         </div>
                 
         <div class="slide">
+          <header><h1 id="working-with-submodules">Working with submodules</h1></header>
+          <section class="small">
+              <p>In a Git repository you can &lsquo;link&rsquo; other repositories to subdirectories. This can be useful, for example when using external libraries or when building your VIM configuration, to pull in all the plugins.</p>
+
+<p>But submodules do not really work the way you would expect them to work, at first:</p>
+
+<ul>
+  <li>submodules must be registered in the repository</li>
+  <li>submodules must be pulled-in separately for each repo.</li>
+  <li>submodules are not updated automatically</li>
+  <li>submodules are not pushed automatically</li>
+  <li>a specific commit is referenced in the parent repo</li>
+</ul>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1 id="working-with-submodules-1">Working with submodules</h1></header>
+          <section class="small">
+              <p>First you need to add a repository as a submodule</p>
+
+<pre><code>git submodule add git://path/to/repo path/in/repo
+</code></pre>
+
+<p>This will modify the .gitmodules file, which is part of the parent repository, and record the exact commit which is checked out in the submodule.
+Now you can commit, push, etc.</p>
+
+<p>When another repository pulls in the change the following steps are required:</p>
+
+<pre><code>git submodule init
+# This will update the .git/config file for that repository
+# and register the submodule in the repository
+
+git submodule update
+# This will check-out all the submodules to the correct commit
+</code></pre>
+
+<p>To update you can checkout another commit in the submodule (for example by pulling) and commit the reference to this new commit in the parent repository.</p>
+
+<p>To update all the modules, you can use something like:</p>
+
+<pre><code>git submodule foreach git pull origin master
+</code></pre>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
           <header><h1 id="git-and-drupal">Git and Drupal</h1></header>
           <section class="small">
               <p>For the Drupal infrastructure (Update status, testing bot, etc) it is important to following the following conventions:</p>
@@ -1458,6 +1511,7 @@ git rebase github/master
   <li>The Git Community Book: <a href="http://book.git-scm.com/">http://book.git-scm.com/</a></li>
   <li>Webspecies (image of Git kid): <a href="http://blog.webspecies.co.uk/2011-05-23/the-new-era-of-php-frameworks.html">http://blog.webspecies.co.uk</a></li>
 </ul>
+
 
           </section>
         </div>
