@@ -190,6 +190,11 @@ Another important reference is **master**
 * master is the 'default' branch in Git
 * when working on the master branch, the master reference and the HEAD reference point to the same commit
 
+## special
+
+* **HEAD^ & HEAD^^**: The commit before HEAD, two commits before HEAD
+* **master~7**: 7 commits before master reference
+
 And that brings us to...
 
 # Branches
@@ -258,7 +263,8 @@ When merging two or more branches there are two possibilities:
 * The commit has two or more parents
 
 # Merging
-##Fast Forward
+
+## Fast Forward
 * When the target branch does not have new commits
 * No merge commit is created
 * In fact nothing much happens
@@ -580,6 +586,41 @@ To update you can checkout another commit in the submodule (for example by pulli
 To update all the modules, you can use something like:
 
     git submodule foreach git pull origin master
+
+# Git Bisect
+
+Sometimes somebody will introduce bugs into your software or brake previously working features. Who knows, maybe even you! While trying to find the source of the problem, it can be useful to know which commit exactly introduced the troubles in paradise. That is exactly what Git bisect is for.
+
+* Inform Git about one 'good' commit
+* And about one 'bad' commit
+* Git will checkout a commit for you
+* Verify that commit
+* Tell Git whether that commit has the problem ('bad'), or not ('good')
+* Finally the 'bad' commit will be found
+
+# Git Bisect
+Let's say you know the feature was already broken in the previous commit and you 10 commits ago the feature still worked.
+
+Start Git Bisect and inform Git about this:
+
+    git bisect start
+    git bisect bad HEAD~10
+    git bisect good HEAD^
+
+Git will checkout the commit in the middle, so you can test:
+
+    Bisecting: 5 revisions left to test after this (roughly 3 steps)
+
+After testing you inform Git about the result
+
+    git bisect good # when the feature worked
+    git bisect bad  # when the feature is b0rken
+
+After you have found the bad commit, reset your repository:
+
+    git bisect reset
+
+If you write a script which can verify each commit, you can let Git run it for every commit!
 
 # Git and Drupal
 

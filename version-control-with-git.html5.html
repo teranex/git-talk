@@ -792,6 +792,13 @@ a8784b043f12b4b0c9114c55ebf33f5c9b44ce8f
   <li>when working on the master branch, the master reference and the HEAD reference point to the same commit</li>
 </ul>
 
+<h2 id="special">special</h2>
+
+<ul>
+  <li><strong>HEAD^ &amp; HEAD^^</strong>: The commit before HEAD, two commits before HEAD</li>
+  <li><strong>master~7</strong>: 7 commits before master reference</li>
+</ul>
+
 <p>And that brings us to&hellip;</p>
 
 
@@ -910,13 +917,15 @@ git merge origin
         <div class="slide">
           <header><h1 id="merging-2">Merging</h1></header>
           <section class="small">
-              <p>##Fast Forward
-* When the target branch does not have new commits
-* No merge commit is created
-* In fact nothing much happens
-* Except: The reference for the target branch is simply changed to point the same commit as the source branch
-* This is an ideal situation and can never go wrong
-* Obviously you are not always this lucky (→ rebasing)</p>
+              <h2 id="fast-forward">Fast Forward</h2>
+<ul>
+  <li>When the target branch does not have new commits</li>
+  <li>No merge commit is created</li>
+  <li>In fact nothing much happens</li>
+  <li>Except: The reference for the target branch is simply changed to point the same commit as the source branch</li>
+  <li>This is an ideal situation and can never go wrong</li>
+  <li>Obviously you are not always this lucky (→ rebasing)</li>
+</ul>
 
 
 
@@ -1444,6 +1453,60 @@ git submodule update
 
 <pre><code>git submodule foreach git pull origin master
 </code></pre>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1 id="git-bisect">Git Bisect</h1></header>
+          <section class="small">
+              <p>Sometimes somebody will introduce bugs into your software or brake previously working features. Who knows, maybe even you! While trying to find the source of the problem, it can be useful to know which commit exactly introduced the troubles in paradise. That is exactly what Git bisect is for.</p>
+
+<ul>
+  <li>Inform Git about one &lsquo;good&rsquo; commit</li>
+  <li>And about one &lsquo;bad&rsquo; commit</li>
+  <li>Git will checkout a commit for you</li>
+  <li>Verify that commit</li>
+  <li>Tell Git whether that commit has the problem (&lsquo;bad&rsquo;), or not (&lsquo;good&rsquo;)</li>
+  <li>Finally the &lsquo;bad&rsquo; commit will be found</li>
+</ul>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header><h1 id="git-bisect-1">Git Bisect</h1></header>
+          <section class="small">
+              <p>Let&rsquo;s say you know the feature was already broken in the previous commit and you 10 commits ago the feature still worked.</p>
+
+<p>Start Git Bisect and inform Git about this:</p>
+
+<pre><code>git bisect start
+git bisect bad HEAD~10
+git bisect good HEAD^
+</code></pre>
+
+<p>Git will checkout the commit in the middle, so you can test:</p>
+
+<pre><code>Bisecting: 5 revisions left to test after this (roughly 3 steps)
+</code></pre>
+
+<p>After testing you inform Git about the result</p>
+
+<pre><code>git bisect good # when the feature worked
+git bisect bad  # when the feature is b0rken
+</code></pre>
+
+<p>After you have found the bad commit, reset your repository:</p>
+
+<pre><code>git bisect reset
+</code></pre>
+
+<p>If you write a script which can verify each commit, you can let Git run it for every commit!</p>
 
 
 
