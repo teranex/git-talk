@@ -526,16 +526,20 @@ handle everything from small to very large projects with speed and efficiency.&r
         <div class="slide">
           <header><h1 id="basic-git-usage">Basic Git Usage</h1></header>
           <section class="small">
-              <p>First initialize the git repository:
-    git init</p>
+              <p>First initialize the git repository:</p>
 
-<p>Then add files
-    git add -A
-    # or
-    git add .
-    # or
-    git add myfile.txt
-    git add myotherfile.rb</p>
+<pre><code>git init
+</code></pre>
+
+<p>Then add files</p>
+
+<pre><code>git add -A
+# or
+git add .
+# or
+git add myfile.txt
+git add myotherfile.rb
+</code></pre>
 
 <p>And commit the files
     git commit</p>
@@ -639,18 +643,24 @@ not end up in your commit, unless you add the file again to the index!</p>
         <div class="slide">
           <header><h1 id="undoing-changes">Undoing changes</h1></header>
           <section class="small">
-              <p>## Checkout
-Checkout a single file. Notice the dashes: <code>git checkout</code> is also used in other cases, this makes it clear to Git that you are pointing to a single file.
-    git checkout &ndash; /path/to/file    # restore version from index
-    git checkout HEAD /path/to/file  # restore to latest committed version</p>
+              <h2 id="checkout">Checkout</h2>
+<p>Checkout a single file. Notice the dashes: <code>git checkout</code> is also used in other cases, this makes it clear to Git that you are pointing to a single file.</p>
+
+<pre><code>git checkout -- /path/to/file    # restore version from index
+git checkout HEAD /path/to/file  # restore to latest committed version
+</code></pre>
 
 <h2 id="reset">Reset</h2>
-<p>Reset all the changes in your working copy
-    git reset [&ndash;hard]</p>
+<p>Reset your branch to a commit and all the changes in your working copy</p>
+
+<pre><code>git reset [--hard]
+</code></pre>
 
 <h2 id="revert">Revert</h2>
-<p>Write a reversed version of an existing commit. This is very useful if you have already pushed the commit
-    git revert [commit-sha]</p>
+<p>Write a reversed version of an existing commit. This is very useful if you have already pushed the commit</p>
+
+<pre><code>git revert [commit-sha]
+</code></pre>
 
 <h2 id="rebase">Rebase</h2>
 <p>We&rsquo;ll discuss this later</p>
@@ -667,7 +677,7 @@ Checkout a single file. Notice the dashes: <code>git checkout</code> is also use
 
 <p>The most important point to remember:  </p>
 
-<p>** Basically a Git repository is a database of objects **</p>
+<p><strong>Basically a Git repository is a database of objects</strong></p>
 
 
 
@@ -918,6 +928,7 @@ git merge origin
           <header><h1 id="merging-2">Merging</h1></header>
           <section class="small">
               <h2 id="fast-forward">Fast Forward</h2>
+
 <ul>
   <li>When the target branch does not have new commits</li>
   <li>No merge commit is created</li>
@@ -935,8 +946,9 @@ git merge origin
         <div class="slide">
           <header><h1 id="merging-3">Merging</h1></header>
           <section class="small">
-              <p>## Fast Forward
-<img src="img/git-07-before.png" alt="git-07-before" /> Merge the &lsquo;mywork&rsquo; branch into origin
+              <h2 id="fast-forward-1">Fast Forward</h2>
+
+<p><img src="img/git-07-before.png" alt="git-07-before" /> Merge the &lsquo;mywork&rsquo; branch into origin
 <img src="img/git-07-after.png" alt="git-07-after" /> The origin branch is simply fast-forwarded</p>
 
 
@@ -953,6 +965,7 @@ git merge origin
 This is <strong>NOT TRUE</strong>. (At least if you know what you are doing)</p>
 
 <h2 id="so-what-is-rebasing">So what is &lsquo;rebasing&rsquo;?</h2>
+
 <p>By rebasing your commits you can actually rewrite your history:</p>
 
 <ul>
@@ -974,7 +987,7 @@ This is <strong>NOT TRUE</strong>. (At least if you know what you are doing)</p>
         <div class="slide">
           <header><h1 id="rebasing-1">Rebasing</h1></header>
           <section class="small">
-              <p>## How not to break your repo?</p>
+              <h2 id="how-not-to-break-your-repo">How not to break your repo?</h2>
 
 <p>Do not rebase commits which have already been pushed to other people  </p>
 
@@ -996,7 +1009,7 @@ This is <strong>NOT TRUE</strong>. (At least if you know what you are doing)</p>
         <div class="slide">
           <header><h1 id="rebasing-2">Rebasing</h1></header>
           <section class="small">
-              <p>## Amending changes</p>
+              <h2 id="amending-changes">Amending changes</h2>
 
 <ul>
   <li>The easiest and &lsquo;safest&rsquo; kind of rebase </li>
@@ -1017,8 +1030,9 @@ This is <strong>NOT TRUE</strong>. (At least if you know what you are doing)</p>
         <div class="slide">
           <header><h1 id="rebasing-3">Rebasing</h1></header>
           <section class="small">
-              <p>## &hellip; on another branch
-This is an alternative approach to merging, with a merge commit.</p>
+              <h2 id="on-another-branch">&hellip; on another branch</h2>
+
+<p>This is an alternative approach to merging, with a merge commit.</p>
 
 <p>Let&rsquo;s reuse the example:</p>
 
@@ -1034,8 +1048,9 @@ This is an alternative approach to merging, with a merge commit.</p>
         <div class="slide">
           <header><h1 id="rebasing-4">Rebasing</h1></header>
           <section class="small">
-              <p>## &hellip; on another branch
-What we did before:</p>
+              <h2 id="on-another-branch-1">&hellip; on another branch</h2>
+
+<p>What we did before:</p>
 
 <pre><code>git checkout origin
 git merge mywork
@@ -1058,7 +1073,7 @@ git merge mywork
         <div class="slide">
           <header><h1 id="rebasing-5">Rebasing</h1></header>
           <section class="small">
-              <p>## &hellip; on another branch</p>
+              <h2 id="on-another-branch-2">&hellip; on another branch</h2>
 
 <pre><code># on the mywork branch
 git rebase origin
@@ -1074,7 +1089,7 @@ git rebase origin
         <div class="slide">
           <header><h1 id="rebasing-6">Rebasing</h1></header>
           <section class="small">
-              <p>## &hellip; on another branch</p>
+              <h2 id="on-another-branch-3">&hellip; on another branch</h2>
 
 <p><img src="img/git-09.png" alt="git-09" /></p>
 
@@ -1086,7 +1101,7 @@ git rebase origin
         <div class="slide">
           <header><h1 id="rebasing-7">Rebasing</h1></header>
           <section class="small">
-              <p>## &hellip; on another branch</p>
+              <h2 id="on-another-branch-4">&hellip; on another branch</h2>
 
 <p><img src="img/git-10.png" alt="git-10" /></p>
 
@@ -1098,7 +1113,7 @@ git rebase origin
         <div class="slide">
           <header><h1 id="rebasing-8">Rebasing</h1></header>
           <section class="small">
-              <p>## Interactively</p>
+              <h2 id="interactively">Interactively</h2>
 
 <p>With interactive rebasing you can really rewrite history the way you want it to be. &hellip;And break your repository.</p>
 
@@ -1119,7 +1134,7 @@ git rebase origin
         <div class="slide">
           <header><h1 id="rebasing-9">Rebasing</h1></header>
           <section class="small">
-              <p>## Interactively</p>
+              <h2 id="interactively-1">Interactively</h2>
 
 <p>To rebase the most recent 3 commits:</p>
 
@@ -1155,8 +1170,9 @@ git rebase origin
         <div class="slide">
           <header><h1 id="working-with-remotes-1">Working with remotes</h1></header>
           <section class="small">
-              <p>## Manually adding remotes
-Sometimes you will want to add a remote</p>
+              <h2 id="manually-adding-remotes">Manually adding remotes</h2>
+
+<p>Sometimes you will want to add a remote</p>
 
 <ul>
   <li>Because you had already created the repository</li>
@@ -1178,7 +1194,7 @@ Sometimes you will want to add a remote</p>
         <div class="slide">
           <header><h1 id="working-with-remotes-2">Working with remotes</h1></header>
           <section class="small">
-              <p>## Pulling and pushing</p>
+              <h2 id="pulling-and-pushing">Pulling and pushing</h2>
 
 <p>When you have cloned the repository:</p>
 
@@ -1202,7 +1218,7 @@ Sometimes you will want to add a remote</p>
         <div class="slide">
           <header><h1 id="working-with-remotes-3">Working with remotes</h1></header>
           <section class="small">
-              <p>## Remote Branches</p>
+              <h2 id="remote-branches">Remote Branches</h2>
 
 <p>It is important to think about remote branches as just <em>branches</em></p>
 
@@ -1228,7 +1244,7 @@ Sometimes you will want to add a remote</p>
         <div class="slide">
           <header><h1 id="working-with-remotes-4">Working with remotes</h1></header>
           <section class="small">
-              <p>## Remote Branches</p>
+              <h2 id="remote-branches-1">Remote Branches</h2>
 
 <p>You can get a good overview of all your local and remote branches and how they are trakcing with:
     git branch -avv</p>
@@ -1243,7 +1259,7 @@ Sometimes you will want to add a remote</p>
         <div class="slide">
           <header><h1 id="working-with-remotes-5">Working with remotes</h1></header>
           <section class="small">
-              <p>## Tracking branches</p>
+              <h2 id="tracking-branches">Tracking branches</h2>
 
 <p>To create a local branch based on a remote branch:</p>
 
@@ -1267,7 +1283,7 @@ Sometimes you will want to add a remote</p>
         <div class="slide">
           <header><h1 id="working-with-remotes-6">Working with remotes</h1></header>
           <section class="small">
-              <p>## Merging while pulling</p>
+              <h2 id="merging-while-pulling">Merging while pulling</h2>
 
 <p>To better understand pulling, let&rsquo;s see what actually happens. Instead of using <code>git pull</code>, you also do (while on the master branch):</p>
 
@@ -1288,8 +1304,9 @@ git merge github/master
         <div class="slide">
           <header><h1 id="working-with-remotes-7">Working with remotes</h1></header>
           <section class="small">
-              <p>## Avoiding useless merge commits
-Merging a remote branch in your local branch can create a useless merge commit:</p>
+              <h2 id="avoiding-useless-merge-commits">Avoiding useless merge commits</h2>
+
+<p>Merging a remote branch in your local branch can create a useless merge commit:</p>
 
 <p><img src="img/git-16.png" alt="git-16" /></p>
 

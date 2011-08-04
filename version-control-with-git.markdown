@@ -33,9 +33,11 @@ title: Version Control with Git
 
 # Basic Git Usage
 First initialize the git repository:
+
     git init
 
 Then add files
+
     git add -A
     # or
     git add .
@@ -98,18 +100,22 @@ Tip: add this in your global gitconfig as an alias: ~/.gitconfig
         %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative    
 
 # Undoing changes
+
 ## Checkout
 Checkout a single file. Notice the dashes: `git checkout` is also used in other cases, this makes it clear to Git that you are pointing to a single file.
+
     git checkout -- /path/to/file    # restore version from index
     git checkout HEAD /path/to/file  # restore to latest committed version
 
 
 ## Reset
-Reset all the changes in your working copy
+Reset your branch to a commit and all the changes in your working copy
+
     git reset [--hard]
 
 ## Revert
 Write a reversed version of an existing commit. This is very useful if you have already pushed the commit
+
     git revert [commit-sha]
 
 ## Rebase
@@ -119,8 +125,8 @@ We'll discuss this later
 Knowing how Git stores all your data will give you a better understanding of the fundamentals and Git will become a lot more predictable
 
 The most important point to remember:  
-   
-** Basically a Git repository is a database of objects **
+    
+**Basically a Git repository is a database of objects**
 
 # How Git stores your data
 The most important types of objects:
@@ -265,6 +271,7 @@ When merging two or more branches there are two possibilities:
 # Merging
 
 ## Fast Forward
+
 * When the target branch does not have new commits
 * No merge commit is created
 * In fact nothing much happens
@@ -273,7 +280,9 @@ When merging two or more branches there are two possibilities:
 * Obviously you are not always this lucky (→ rebasing)
 
 # Merging 
+
 ## Fast Forward
+
 ![git-07-before](img/git-07-before.png) Merge the 'mywork' branch into origin
 ![git-07-after](img/git-07-after.png) The origin branch is simply fast-forwarded
 
@@ -284,6 +293,7 @@ Some people will tell you that this is very harmful, it can break your repositor
 This is **NOT TRUE**. (At least if you know what you are doing)
 
 ## So what is 'rebasing'?
+
 By rebasing your commits you can actually rewrite your history:
 
 * Edit a commit message
@@ -296,6 +306,7 @@ By rebasing your commits you can actually rewrite your history:
 * And break your repository if you want :)
 
 # Rebasing
+
 ## How not to break your repo?
 
 Do not rebase commits which have already been pushed to other people  
@@ -312,6 +323,7 @@ If you do rebase a commit which was already pushed, Git will refuse the new comm
 
 
 # Rebasing
+
 ## Amending changes
 
 * The easiest and 'safest' kind of rebase 
@@ -323,7 +335,9 @@ After modifying your index again:
     git commit --amend
 
 # Rebasing
+
 ## ... on another branch
+
 This is an alternative approach to merging, with a merge commit.
 
 Let's reuse the example:
@@ -333,7 +347,9 @@ Let's reuse the example:
 Now you  want to merge 'mywork' into 'origin' without creating a merge commit
 
 # Rebasing
+
 ## ... on another branch
+
 What we did before:
 
     git checkout origin
@@ -348,6 +364,7 @@ What we will do now:
     git merge mywork
 
 # Rebasing
+
 ## ... on another branch
 
     # on the mywork branch
@@ -356,16 +373,19 @@ What we will do now:
 ![git-08](img/git-08.png)
 
 # Rebasing
+
 ## ... on another branch
 
 ![git-09](img/git-09.png)
 
 # Rebasing
+
 ## ... on another branch
 
 ![git-10](img/git-10.png)
 
 # Rebasing
+
 ## Interactively
 
 With interactive rebasing you can really rewrite history the way you want it to be. ...And break your repository.
@@ -379,6 +399,7 @@ Suppose we have the following commits
 ![git-11](img/git-11.png)
 
 # Rebasing
+
 ## Interactively
 
 To rebase the most recent 3 commits:
@@ -400,7 +421,9 @@ Easiest method to set this up is by cloning an existing repository instead of in
 This will set up everything for you
 
 # Working with remotes
+
 ## Manually adding remotes
+
 Sometimes you will want to add a remote
 
 * Because you had already created the repository
@@ -413,6 +436,7 @@ This is done with the `git remote` command
 This will add my Github repository for this presentation as a remote with the name _github_
 
 # Working with remotes
+
 ## Pulling and pushing
 
 When you have cloned the repository:
@@ -428,6 +452,7 @@ Will push your changes to the origin
 **However**: This will only work for '_tracking_' branches.
 
 # Working with remotes
+
 ## Remote Branches
 
 It is important to think about remote branches as just _branches_
@@ -444,6 +469,7 @@ By default, Git does not know, nor care, about relationships between branches!
 * By default, no local branches are created for remote branches
 
 # Working with remotes
+
 ## Remote Branches
 
 You can get a good overview of all your local and remote branches and how they are trakcing with:
@@ -452,6 +478,7 @@ You can get a good overview of all your local and remote branches and how they a
 ![img-19](img/git-19.png)
 
 # Working with remotes
+
 ## Tracking branches
 
 To create a local branch based on a remote branch:
@@ -467,6 +494,7 @@ You can verify this in the git config file (.git/config) in your repository:
 ![git-15](img/git-15.png)
 
 # Working with remotes
+
 ## Merging while pulling
 
 To better understand pulling, let's see what actually happens. Instead of using `git pull`, you also do (while on the master branch):
@@ -480,7 +508,9 @@ To better understand pulling, let's see what actually happens. Instead of using 
 This works exactly the same as merging two local branches!  
 
 # Working with remotes
+
 ## Avoiding useless merge commits
+
 Merging a remote branch in your local branch can create a useless merge commit:
 
 ![git-16](img/git-16.png)
