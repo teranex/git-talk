@@ -498,11 +498,20 @@ or, if you want to do it manually:
 
 * Gitk: Part of the official Git distro, but it's UGLY UGLY UGLY
 * Giggle & GitX: better looking, for Gnome & Mac
-* tig: commandline. Also very useful to stage/unstage files
-* Fugitive and gitv plugins for Vim
-* meld: mergetool for linux, has support for git
 
 ![git-17](img/git-17.png)
+
+# Some really cool tools
+* Fugitive and gitv plugins for Vim
+![tools-2](./img/tools-2.png)
+
+# Some really cool tools
+
+* tig: commandline. Also very useful to stage/unstage files
+* meld: mergetool for linux, has support for git
+* bash prompt information  
+  Include `$(__git_ps1 '  %s  ')` in your $PS1
+![tools-3](./img/tools-3.png)
 
 # Git and Subversion (and friends)
 
