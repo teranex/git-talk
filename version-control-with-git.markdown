@@ -622,6 +622,27 @@ After you have found the bad commit, reset your repository:
 
 If you write a script which can verify each commit, you can let Git run it for every commit!
 
+# Git Stash
+
+Sometimes you will want to reset your working copy to a clean state, without committing your work, nor deleting it. In this case you can stash your changes:
+
+    git stash
+    git stash save "something fancy i was working on"
+
+This will create something like a commit and hard-reset your working copy.
+
+Later you can retrieve your work:
+
+    git stash list  # list all your stashes
+    git stash pop   # re-apply the latest stash, this will also delete the stash!
+    git stash apply # like pop, but do not delete the stash
+
+I often use the stash when I want to `git pull --rebase`, while I have uncommitted changes (git will refuse to do it in that case):
+
+    git stash
+    git pull --rebase
+    git stash pop
+
 # Git and Drupal
 
 For the Drupal infrastructure (Update status, testing bot, etc) it is important to following the following conventions:

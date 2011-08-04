@@ -1514,6 +1514,36 @@ git bisect bad  # when the feature is b0rken
         </div>
                 
         <div class="slide">
+          <header><h1 id="git-stash">Git Stash</h1></header>
+          <section class="small">
+              <p>Sometimes you will want to reset your working copy to a clean state, without committing your work, nor deleting it. In this case you can stash your changes:</p>
+
+<pre><code>git stash
+git stash save "something fancy i was working on"
+</code></pre>
+
+<p>This will create something like a commit and hard-reset your working copy.</p>
+
+<p>Later you can retrieve your work:</p>
+
+<pre><code>git stash list  # list all your stashes
+git stash pop   # re-apply the latest stash, this will also delete the stash!
+git stash apply # like pop, but do not delete the stash
+</code></pre>
+
+<p>I often use the stash when I want to <code>git pull --rebase</code>, while I have uncommitted changes (git will refuse to do it in that case):</p>
+
+<pre><code>git stash
+git pull --rebase
+git stash pop
+</code></pre>
+
+
+
+          </section>
+        </div>
+                
+        <div class="slide">
           <header><h1 id="git-and-drupal">Git and Drupal</h1></header>
           <section class="small">
               <p>For the Drupal infrastructure (Update status, testing bot, etc) it is important to following the following conventions:</p>
