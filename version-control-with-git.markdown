@@ -638,13 +638,13 @@ Sometimes somebody will introduce bugs into your software or brake previously wo
 * Finally the 'bad' commit will be found
 
 # Git Bisect
-Let's say you know the feature was already broken in the previous commit and you 10 commits ago the feature still worked.
+Let's say you know the feature was already broken in the previous commit and 10 commits ago the feature still worked.
 
 Start Git Bisect and inform Git about this:
 
     git bisect start
-    git bisect bad HEAD~10
-    git bisect good HEAD^
+    git bisect bad HEAD^
+    git bisect good HEAD~10
 
 Git will checkout the commit in the middle, so you can test:
 

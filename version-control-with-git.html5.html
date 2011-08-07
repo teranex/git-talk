@@ -1524,13 +1524,13 @@ git submodule update
         <div class="slide">
           <header><h1 id="git-bisect-1">Git Bisect</h1></header>
           <section class="small">
-              <p>Let&rsquo;s say you know the feature was already broken in the previous commit and you 10 commits ago the feature still worked.</p>
+              <p>Let&rsquo;s say you know the feature was already broken in the previous commit and 10 commits ago the feature still worked.</p>
 
 <p>Start Git Bisect and inform Git about this:</p>
 
 <pre><code>git bisect start
-git bisect bad HEAD~10
-git bisect good HEAD^
+git bisect bad HEAD^
+git bisect good HEAD~10
 </code></pre>
 
 <p>Git will checkout the commit in the middle, so you can test:</p>
