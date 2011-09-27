@@ -2,3 +2,13 @@ This presentation is a S9 slideshow.
 
 command to compile:
 slideshow -t g5.txt version-control-with-git.markdown
+
+If you get the following error:
+Slide Show (S9) Version: 0.9.9 on Ruby 1.8.7 (2011-06-30) [i386-linux]
+Found 1 Markdown libraries: kramdown
+*** error: unknown template manifest 'g5.txt'
+
+It means you don't have the g5 template installed. Either use another
+one, or install it by running:
+slideshow -f http://github.com/geraldb/slideshow-google-html5-slides/raw/master/g5.txt
+
