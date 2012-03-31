@@ -476,10 +476,10 @@
   <li>At <a href="http://inuits.eu">Inuits</a> - An Open Source Consultancy Company</li>
   <li><a href="http://budts.be">http://budts.be</a></li>
   <li>@teranex</li>
-  <li>will become a father in November</li>
+  <li>Father</li>
 </ul>
 
-<p><img src="img/git-00_2.png" alt="git-00" /></p>
+<p><img src="img/lotte-git.jpg" alt="lotte-git" /></p>
 
 
 
@@ -495,7 +495,6 @@
   <li>More advanced Git usage
 (branching, merging, rebasing, remotes, &hellip;)</li>
   <li>Some cool Git tools</li>
-  <li>Git and Drupal</li>
 </ul>
 
 
@@ -541,8 +540,10 @@ git add myfile.txt
 git add myotherfile.rb
 </code></pre>
 
-<p>And commit the files
-    git commit</p>
+<p>And commit the files</p>
+
+<pre><code>git commit
+</code></pre>
 
 
 
@@ -578,11 +579,15 @@ not end up in your commit, unless you add the file again to the index!</p>
 
 <p>If you modify files, you need to &lsquo;<em>stage</em>&rsquo; them again, by running <code>git add</code>.  </p>
 
-<p>If you only modified files (not added new ones) you can skip staging with:
-    git commit -a</p>
+<p>If you only modified files (not added new ones) you can skip staging with:</p>
 
-<p>You can also add only parts of a modified file:
-    git add -p myfile.txt</p>
+<pre><code>git commit -a
+</code></pre>
+
+<p>You can also add only parts of a modified file:</p>
+
+<pre><code>git add -p myfile.txt
+</code></pre>
 
 
 
@@ -734,7 +739,7 @@ a8784b043f12b4b0c9114c55ebf33f5c9b44ce8f
               <p>A tree is a like a directory</p>
 
 <ul>
-  <li>Can contain references to 0, 1 or more blobs</li>
+  <li>Can contain references to 1 or more blobs</li>
   <li>Can contain references to 0, 1 or more other trees</li>
   <li>Contains the meta data about the files</li>
   <li>Itself also identified by a hash</li>
@@ -1441,8 +1446,10 @@ Include <code>$(__git_ps1 '  %s  ')</code> in your $PS1
 <pre><code>git flow feature publish my-exiting-feature
 </code></pre>
 
-<p>To finalize the branch:
-    git flow feature finish my-exiting-feature</p>
+<p>To finalize the branch:</p>
+
+<pre><code>git flow feature finish my-exiting-feature
+</code></pre>
 
 
 
@@ -1580,36 +1587,6 @@ git stash apply # like pop, but do not delete the stash
 git pull --rebase
 git stash pop
 </code></pre>
-
-
-
-          </section>
-        </div>
-                
-        <div class="slide">
-          <header><h1 id="git-and-drupal">Git and Drupal</h1></header>
-          <section class="small">
-              <p>For the Drupal infrastructure (Update status, testing bot, etc) it is important to following the following conventions:</p>
-
-<h2 id="branch-names">Branch names</h2>
-<ul>
-  <li>7.x</li>
-  <li>7.x-1.x</li>
-  <li>7.x-2.x</li>
-</ul>
-
-<p>development releases will be created twice a day (7.x-1.x-dev)</p>
-
-<h2 id="tags">Tags</h2>
-<ul>
-  <li>7.x-1.3-beta6: beta 6 release</li>
-  <li>7.x-3.1: final release</li>
-  <li>valid: unstable, alpha, beta, rc</li>
-</ul>
-
-<p>You can create other branches for features etc  </p>
-
-<p>If you don&rsquo;t have commit access on drupal.org, you can contribute by creating git patches (with <code>git diff</code> or <code>git format-patch</code>)</p>
 
 
 

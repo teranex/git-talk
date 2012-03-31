@@ -10,9 +10,9 @@ title: Version Control with Git
 * At [Inuits](http://inuits.eu) - An Open Source Consultancy Company
 * [http://budts.be](http://budts.be)
 * @teranex
-* will become a father in November
+* Father
 
-![git-00](img/git-00_2.png)
+![lotte-git](img/lotte-git.jpg)
 
 # Overview
 * Basic Git usage
@@ -20,7 +20,7 @@ title: Version Control with Git
 * More advanced Git usage
   (branching, merging, rebasing, remotes, ...)
 * Some cool Git tools
-* Git and Drupal
+%* Git and Drupal
 
 # What is Git?
 > "Git is a free & open source, distributed version control system designed to 
@@ -46,6 +46,7 @@ Then add files
     git add myotherfile.rb
 
 And commit the files
+
     git commit
 
 # The Index (Staging Area)
@@ -68,9 +69,11 @@ not end up in your commit, unless you add the file again to the index!
 If you modify files, you need to '_stage_' them again, by running `git add`.  
 
 If you only modified files (not added new ones) you can skip staging with:
+
     git commit -a
 
 You can also add only parts of a modified file:
+
     git add -p myfile.txt
 
 # The Index (Staging Area)
@@ -157,7 +160,7 @@ some examples:
 # Trees
 A tree is a like a directory
 
-* Can contain references to 0, 1 or more blobs
+* Can contain references to 1 or more blobs
 * Can contain references to 0, 1 or more other trees
 * Contains the meta data about the files
 * Itself also identified by a hash
@@ -266,6 +269,7 @@ When merging two or more branches there are two possibilities:
 * Git automatically proposes a commit message:  
 
     `Merge branch 'mywork' into master`
+
 * The commit has two or more parents
 
 # Merging
@@ -588,6 +592,7 @@ To publish the feature (push it to the remote)
     git flow feature publish my-exiting-feature
 
 To finalize the branch:
+
     git flow feature finish my-exiting-feature
 
 # Working with submodules
@@ -682,25 +687,25 @@ I often use the stash when I want to `git pull --rebase`, while I have uncommitt
     git pull --rebase
     git stash pop
 
-# Git and Drupal
-
-For the Drupal infrastructure (Update status, testing bot, etc) it is important to following the following conventions:
-
-## Branch names
-* 7.x
-* 7.x-1.x
-* 7.x-2.x
-
-development releases will be created twice a day (7.x-1.x-dev)
-
-## Tags
-* 7.x-1.3-beta6: beta 6 release
-* 7.x-3.1: final release
-* valid: unstable, alpha, beta, rc
-
-You can create other branches for features etc  
-
-If you don't have commit access on drupal.org, you can contribute by creating git patches (with `git diff` or `git format-patch`)
+% # Git and Drupal
+% 
+% For the Drupal infrastructure (Update status, testing bot, etc) it is important to following the following conventions:
+% 
+% ## Branch names
+% * 7.x
+% * 7.x-1.x
+% * 7.x-2.x
+% 
+% development releases will be created twice a day (7.x-1.x-dev)
+% 
+% ## Tags
+% * 7.x-1.3-beta6: beta 6 release
+% * 7.x-3.1: final release
+% * valid: unstable, alpha, beta, rc
+% 
+% You can create other branches for features etc  
+% 
+% If you don't have commit access on drupal.org, you can contribute by creating git patches (with `git diff` or `git format-patch`)
 
 # Suggested reading and resources
 
