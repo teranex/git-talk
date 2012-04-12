@@ -9,7 +9,7 @@ title: Version Control with Git
 * PHP & Drupal Developer
 * At [Inuits](http://inuits.eu) - An Open Source Consultancy Company
 * [http://budts.be](http://budts.be)
-* @teranex
+* Twitter: @teranex
 * Father
 
 ![lotte-git](img/lotte-git.jpg)
