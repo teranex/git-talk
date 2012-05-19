@@ -2,7 +2,9 @@ title: Version Control with Git
 
 %# Version Control with Git
 !SLIDE
-![main](img/main-slide.png)
+%![main](img/drupalcamp-front.png)
+<img src="img/drupalcamp-front.png" style="width: 100%;">
+
 
 # Who am I?
 * Jeroen Budts
