@@ -11,8 +11,7 @@ title: Version Control with Git
 * PHP & Drupal Developer
 * At [Inuits](http://inuits.eu) - An Open Source Consultancy Company
 * [http://budts.be](http://budts.be)
-* @teranex
-* Father
+* twitter: @teranex
 
 ![lotte-git](img/lotte-git.jpg)
 
@@ -22,7 +21,7 @@ title: Version Control with Git
 * More advanced Git usage
   (branching, merging, rebasing, remotes, ...)
 * Some cool Git tools
-%* Git and Drupal
+* Git and Drupal
 
 # What is Git?
 > "Git is a free & open source, distributed version control system designed to 
@@ -689,25 +688,25 @@ I often use the stash when I want to `git pull --rebase`, while I have uncommitt
     git pull --rebase
     git stash pop
 
-% # Git and Drupal
-% 
-% For the Drupal infrastructure (Update status, testing bot, etc) it is important to following the following conventions:
-% 
-% ## Branch names
-% * 7.x
-% * 7.x-1.x
-% * 7.x-2.x
-% 
-% development releases will be created twice a day (7.x-1.x-dev)
-% 
-% ## Tags
-% * 7.x-1.3-beta6: beta 6 release
-% * 7.x-3.1: final release
-% * valid: unstable, alpha, beta, rc
-% 
-% You can create other branches for features etc  
-% 
-% If you don't have commit access on drupal.org, you can contribute by creating git patches (with `git diff` or `git format-patch`)
+# Git and Drupal
+
+For the Drupal infrastructure (Update status, testing bot, etc) it is important to following the following conventions:
+
+## Branch names
+* 7.x
+* 7.x-1.x
+* 7.x-2.x
+
+development releases will be created twice a day (7.x-1.x-dev)
+
+## Tags
+* 7.x-1.3-beta6: beta 6 release
+* 7.x-3.1: final release
+* valid: unstable, alpha, beta, rc
+
+You can create other branches for features etc  
+
+If you don't have commit access on drupal.org, you can contribute by creating git patches (with `git diff` or `git format-patch`)
 
 # Suggested reading and resources
 
